@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./public/assets/icons/iconSite.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/jogoReacao.css">
+    <link rel="stylesheet" href="public/css/animations.css">
+    <title>PlayScore | Jogo de Reação</title>
+</head>
+
+<body>
+    <div class="telaJogo">
+        <h1>Jogo de Reação</h1>
+        <button class="botao" id="btn_iniciar">Iniciar</button>
+    </div>
+
+    <div class="telaJogo">
+        <h1>Defina o Timer</h1>
+        <ul class="lista" id="timerLista">
+            <li>
+                <button class="botao btnTempo" data-tempo="10">10 Segundos</button>
+            </li>
+            <li>
+                <button class="botao btnTempo" data-tempo="30">30 Segundos</button>
+            </li>
+            <li>
+                <button class="botao btnTempo" data-tempo="60">1 Minuto</button>
+            </li>
+            <li>
+                <button class="botao btnTempo" data-tempo="120">2 Minutos</button>
+            </li>
+            <li>
+                <button class="botao btnTempo" data-infinito="true">Sim</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="telaJogo">
+        <h1>Defina a Dificuldade</h1>
+        <ul class="lista" id="dificuldadeLista">
+            <li>
+                <button class="botao btnDificuldade" data-dificuldade="0">🥱 Fácil 🥱</button>
+            </li>
+            <li>
+                <button class="botao btnDificuldade" data-dificuldade="1">😎 Médio 😎</button>
+            </li>
+            <li>
+                <button class="botao btnDificuldade" data-dificuldade="3">😈 Difícil 😈</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="telaJogo">
+        <div class="telaFinal">
+            <div class="info">
+                <p>Tempo: <span id="spanTempo">00:00</span></p>
+                <p>Acertos: <span id="spanAcertos">0</span></p>
+                <p>Precisão: <span id="spanPrecisao">100%</span></p>
+            </div>
+            <div class="vidas">
+                <img src="./public/assets/icons/heart.png" class="coracao morte">
+                <img src="./public/assets/icons/heart.png" class="coracao">
+                <img src="./public/assets/icons/heart.png" class="coracao">
+            </div>
+        </div>
+        <div class="borda" id="borda">
+            <!-- <div class="circulo"></div> -->
+        </div>
+        <div class="opcoes">
+            <button class="botao reiniciar">Reiniciar</button>
+        </div>
+    </div>
+
+    <div class="telaJogo">
+        <h1>Fim de Jogo</h1>
+        <div class="resultado">
+            <p>Acertos: <span id="acertos-final">0</span></p>
+            <p>Precisão: <span id="precisao-final">0%</span></p>
+        </div>
+        <button class="botao reiniciar">Reiniciar</button>
+    </div>
+
+    <script src="public/js/jogoReacao.js"></script>
+</body>
+
+</html>

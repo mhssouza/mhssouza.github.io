@@ -1,0 +1,93 @@
+body {
+    background-image: url(../assets/img/telaLogin.gif);
+    background-size: cover;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    width: 55%;
+    margin-left: 23%;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 187, 193);
+    font-size: 50px;
+    margin: 2%;
+}
+
+.card-login {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 1px 1px 20px rgb(72, 252, 252);
+    border: solid 5px;
+    margin: 3% 27%;
+    border-color: rgb(0, 0, 105);
+    border-radius: 25px;
+    padding: 1%;
+}
+
+.inputCampo {
+    transition: 0.25s;
+    background: none;
+    color: #000000;
+    margin-top: 2%;
+    display: flex;
+    height: 40px;
+    width: 90%;
+    border: 0;
+    border-radius: 10px;
+    outline: 2px solid #00c3fe;
+    outline-offset: 3px;
+    transition: 0.25s;
+}
+
+.inputCampo:focus {
+    outline-offset: 5px;
+    background-color: #fff;
+}
+
+.campo {
+    font-size: 20px;
+    margin-left: 30px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.botao {
+    border: 0;
+    margin: 2% 41%;
+    outline: 2px solid rgb(0, 119, 255);
+    outline-offset: 3px;
+    border-radius: 10px;
+    color: aqua;
+    background-color: rgb(10, 10, 10);
+    font-size: 20px;
+    padding: 10px;
+    align-items: center;
+    margin-top: 25px;
+    transition: 0.50s;
+}
+
+.botao:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: darkblue;
+    transition: 0.50s;
+    outline-offset: 6px;
+    transform: translateY(-5px);
+}
+
+.formulario h1 {
+    font-size: 45px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.directLogin {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}

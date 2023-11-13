@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayScore | Login</title>
+    <link rel="shortcut icon" href="./public/assets/icons/iconSite.png" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/login.css">
+</head>
+
+<body>
+    <div class="conteiner">
+        <div class="card card-login">
+            <section class="formulario">
+                <h1>Bem vindo(a) de volta!</h1>
+                <img src="public/assets/img/logoSite.png" class="logo">
+                <div class="campo">
+                    <label class="userLabel">Usuário/E-mail:</label>
+                    <input type="text" class="inputCampo" id="usuario_input">
+                </div>
+
+                <div class="campo">
+                    <label class="userLabel">Senha:</label>
+                    <input class="inputCampo senha" type="password" id="input_senha"> <br>
+                </div>
+
+                <div class="campo">
+                    <u><a href="#">Esqueceu a senha?</a></u>
+                </div>
+
+                <button class="botao" onclick="login()">Entrar</button>
+                <div class="campo">
+                    <span class="directLogin">Não possui um cadastro? <a href="cadastro.html">Cadastre-se aqui!</a></span>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

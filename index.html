@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayScore | Página Inicial</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="shortcut icon" href="./public/assets/icons/iconSite.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="public/assets/img/logoSite.png" class="logo">
+        <ul>
+            <li><a href="#" class="ativo">Tela Inicial</a></li>
+            <li><a href="./login.html">Login</a></li>
+            <li><a href="./cadastro.html">Cadastro</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="public/assets/img/stars.png" id="imgEstrelas">
+        <img src="public/assets/img/moon.png" id="imgLua">
+        <img src="public/assets/img/mountains_behind.png" id="imgMontanhaBack">
+        <h2 id="textoBoasVindas">Boas Vindas!</h2>
+        <a href="#sec" id="botao">Explorar</a>
+        <img src="public/assets/img/mountains_front.png" id="imgMontanhaFront">
+    </section>
+    <div class="sec" id="sec">
+        <h2>O que são Jogos?</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At obcaecati quas dignissimos esse id deserunt
+            explicabo? Quos explicabo error aliquid, maxime asperiores, eligendi optio repellendus odit assumenda
+            facilis, dicta libero. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi at tempora, vero
+            quisquam atque nulla in minus fugit vitae alias temporibus neque. Quod consequatur, cupiditate nobis atque
+            sint voluptatem est. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aliquid neque quisquam
+            libero accusamus sapiente doloremque inventore illum sint sit culpa repellat, modi molestiae error enim,
+            quaerat repudiandae animi fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, vero non
+            voluptates ut itaque at nesciunt enim tenetur est cupiditate omnis voluptatibus maiores eum commodi, eius
+            sapiente dolore dignissimos consequatur. <br> <br> Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Consequatur odit velit, cum vitae dolorum ullam? Repudiandae quod ut pariatur quos architecto hic alias modi
+            omnis quaerat, quis sapiente quo eaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            eum vitae consequatur adipisci provident id similique, rem nisi sed esse, at atque quas quae, temporibus
+            aliquid alias obcaecati. Autem, itaque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aliquid
+            neque quisquam libero accusamus sapiente doloremque inventore illum sint sit culpa repellat, modi molestiae
+            error enim, quaerat repudiandae animi fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Incidunt, vero non voluptates ut itaque at nesciunt enim tenetur est cupiditate omnis voluptatibus maiores
+            eum commodi, eius sapiente dolore dignissimos consequatur. <br> <br>Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Sed aliquid neque quisquam libero accusamus sapiente doloremque inventore illum sint sit
+            culpa repellat, modi molestiae error enim, quaerat repudiandae animi fugit. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Incidunt, vero non voluptates ut itaque at nesciunt enim tenetur est
+            cupiditate omnis voluptatibus maiores eum commodi, eius sapiente dolore dignissimos consequatur.</p>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let imgEstrelas = document.getElementById('imgEstrelas');
+    let imgLua = document.getElementById('imgLua');
+    let imgMontanhaFront = document.getElementById('imgMontanhaFront');
+    let textoBoasVindas = document.getElementById('textoBoasVindas');
+    let botao = document.getElementById('botao');
+    let imgMontanhaBack = document.getElementById('imgMontanhaBack');
+    let header = document.querySelector('header');
+
+    window.addEventListener('scroll', function () {
+        let value = window.scrollY;
+        imgEstrelas.style.left = value * 0.25 + 'px';
+        imgLua.style.top = value * 1.25 + 'px';
+        imgMontanhaBack.style.top = value * 0.5 + 'px';
+        imgMontanhaFront.style.top = value * 0 + 'px';
+        textoBoasVindas.style.marginRight = value * 3 + 'px';
+        textoBoasVindas.style.marginTop = value * 1.5 + 'px';
+        botao.style.marginTop = value * 1.5 + 'px';
+        header.style.top = value * 0.5 + 'px';
+    })
+</script>

@@ -71,7 +71,7 @@ function criarBolinhas() {
     }
 
     const circulo = document.createElement('div');
-    const tamanho = numeroAleatorio(30, 100);
+    const tamanho = numeroAleatorio(99, 100);
     const coresBolinha = ['#03DAC6', '#FF0266', '#b3ff00', '#ccff00', '#9D00FF'];
     const { width, height } = borda.getBoundingClientRect();
     const x = numeroAleatorio(0, width - tamanho);

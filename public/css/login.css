@@ -22,7 +22,7 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 1px 1px 20px rgb(72, 252, 252);
     border: solid 5px;
-    margin: 3% 27%;
+    margin: 1% 30%;
     border-color: rgb(0, 0, 105);
     border-radius: 25px;
     padding: 1%;
@@ -52,12 +52,21 @@ body {
     font-size: 20px;
     margin-left: 30px;
     color: #ffffff;
-    padding: 10px;
+    padding: 7px;
+}
+
+.nomeUser {
+    width: 82.8%;
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .botao {
     border: 0;
-    margin: 2% 41%;
+    margin: 2% 35%;
     outline: 2px solid rgb(0, 119, 255);
     outline-offset: 3px;
     border-radius: 10px;

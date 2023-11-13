@@ -22,36 +22,18 @@
         <div class="conteiner">
             <div class="card-login">
                 <section class="formulario">
-                    <h1>Seja bem vindo(a) à</h1>
-                    <img src="public/assets/img/logoSite.png" class="logo">
-                    <div class="campo">
-                        <label class="userLabel">Nome:</label>
-                        <input class="inputCampo" type="text" id="nome_input"> <br>
+                    <h1>Cadastre-se aqui!</h1>
+                    <div class="campo nomeUser">
+                        <input class="inputCampo" type="text" id="nome_input" placeholder="Nome">
+                        <input type="text" class="inputCampo" id="usuario_input" placeholder="Usuário">
                     </div>
 
                     <div class="campo">
-                        <label class="userLabel">Usuário:</label>
-                        <input type="text" class="inputCampo" id="usuario_input">
-                    </div>
-
-                    <div class="campo">
-                        <label class="userLabel">E-mail:</label>
-                        <input class="inputCampo" type="text" id="email_input"> <br>
-                    </div>
-
-                    <div class="campo">
-                        <label class="userLabel">Senha:</label>
-                        <input class="inputCampo senha" type="password" id="input_senha"> <br>
-                    </div>
-
-                    <div class="campo">
-                        <label class="userLabel">Confirmar Senha:</label>
-                        <input class="inputCampo senha" type="password" id="input_confirmar_senha">
-                    </div>
-
-                    <button class="botao" onclick="cadastrar()">Cadastrar</button> <br> <br>
-
-                    <div class="campo">
+                        <input class="inputCampo" type="text" id="email_input" placeholder="E-mail"> <br>
+                        <input class="inputCampo senha" type="password" id="input_senha" placeholder="Senha"> <br>
+                        <input class="inputCampo senha" type="password" id="input_confirmar_senha"
+                            placeholder="Confirmar Senha">
+                        <button class="botao" onclick="cadastrar()">Cadastrar</button> <br> <br>
                         <span class="directLogin">Já possui um cadastro? <a href="login.html" class="labelLink"> Faça login aqui!</a></span>
                     </div>
                 </section>

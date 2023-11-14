@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/login.css">
     <link rel="stylesheet" href="public/css/animations.css">
-    <link rel="stylesheet" href="public/js/login.js">
     <link rel="shortcut icon" href="./public/assets/icons/iconSite.png" type="image/x-icon">
 
     <title>PlayScore | Cadastro</title>
@@ -21,7 +20,7 @@
         </div>
         <div class="conteiner">
             <div class="card-login">
-                <section class="formulario">
+                <div class="telaCadastro">
                     <h1>Cadastre-se aqui!</h1>
                     <div class="campo nomeUser">
                         <input class="inputCampo" type="text" id="nome_input" placeholder="Nome">
@@ -33,19 +32,26 @@
                         <input class="inputCampo senha" type="password" id="input_senha" placeholder="Senha"> <br>
                         <input class="inputCampo senha" type="password" id="input_confirmar_senha"
                             placeholder="Confirmar Senha">
-                        <button class="botao" onclick="cadastrar()">Cadastrar</button> <br> <br>
-                        <span class="directLogin">Já possui um cadastro?<a href="login.html" class="labelLink">Faça login aqui!</a></span>
+                        <button class="botao" id="btnAvancar">Avançar</button> <br> <br>
+                        <span class="directLogin">Já possui um cadastro?<a href="login.html" class="labelLink">Faça
+                                login aqui!</a></span>
                     </div>
-                </section>
+                </div>
+
+                <div class="telaCadastro">
+                    <div class="campo">
+                        <h1>Perfil de Usuário</h1>
+                        <div class="foto_user"></div>
+                        Escolha uma foto de Usuário: <input type="image" id="input_foto">
+                        <input type="text" class="inputCampo" id="input_descricao">
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 
 </html>
 
-<!-- 
-    - ionicon link
-  -->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="./public/js/login.js"></script>

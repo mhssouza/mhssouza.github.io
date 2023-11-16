@@ -1,28 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: url(../assets/img/telaLogin.gif);
+    display: flex;
+    justify-content: center;
     background-size: cover;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    width: 55%;
-    margin-left: 23%;
-}
-
-.titulo {
-    display: flex;
-    justify-content: center;
-    color: rgb(0, 187, 193);
-    font-size: 50px;
-    margin: 2%;
+    overflow: hidden;
+    background-color: #1e1f26;
 }
 
 .card-login {
     background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 1px 1px 20px rgb(72, 252, 252);
     border: solid 5px;
-    margin: 1% 30%;
+    margin: 5% 30%;
     border-color: rgb(0, 0, 105);
     border-radius: 25px;
     padding: 1%;
@@ -67,7 +62,7 @@ body {
 
 .botao {
     border: 0;
-    margin: 1.5%;
+    margin-right: 30px;
     width: 90%;
     outline: 2px solid rgb(0, 119, 255);
     outline-offset: 3px;
@@ -97,13 +92,16 @@ body {
 }
 
 .foto_user {
-    width: 150;
-    height: 150px;
+    display: flex;
+    justify-self: center;
+    /* width: 150px; */
+    height: 300px;
     color: mediumorchid;
     border-radius: 50%;
 }
 
 .telaCadastro {
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;

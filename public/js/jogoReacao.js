@@ -3,8 +3,17 @@ const btnIniciar = document.querySelector('#btn_iniciar'),
     listaTimer = document.querySelector('#timerLista'),
     listaDificuldade = document.querySelector('#dificuldadeLista'),
     tempoIH = document.querySelector('#spanTempo'),
+    precisaoIH = document.querySelector('#spanPrecisao'),
     acertosIH = document.querySelector('#spanAcertos'),
-    borda = document.querySelector('#borda');
+    borda = document.querySelector('#borda'),
+    acertosFim = document.querySelector('#acertos-final'),
+    vidas = document.querySelectorAll('.coracao'),
+    precisaoFim = document.querySelector('#precisao-final'),
+    btnRestart = document.querySelectorAll('.reiniciar'),
+    qtdBolinhas = document.querySelector('#total-bolinhas'),
+    pontuacaoIH = document.querySelector('#spanPontos'),
+    pontosFim = document.querySelector('#pontos-final'),
+    recordeIH = document.querySelector('#recorde-user');
 
 let tempo = 0,
     infinito = false,
@@ -12,7 +21,10 @@ let tempo = 0,
     jogando = false,
     acertos = 0,
     erros = 0,
-    precisao = '0%',
+    pontos = 0,
+    qtdAlvos = 0,
+    precisao = 0,
+    recorde = 0,
     intervalo = 0;
 
 btnIniciar.addEventListener('click', () => {
@@ -37,6 +49,7 @@ listaDificuldade.addEventListener('click', (e) => {
 
 function iniciarJogo() {
     jogando = true;
+    pontos = 0;
     intervalo = setInterval(diminuirTempo, 1000);
     criarBolinhas();
 }
@@ -47,7 +60,9 @@ function diminuirTempo() {
         return;
     }
 
-    if (tempo == 0) { }
+    if (tempo == 0) {
+        encerrarJogo();
+    }
 
     let atual = --tempo;
     let milisegundos = tempo * 1000;
@@ -101,6 +116,8 @@ function criarBolinhas() {
     circulo.addEventListener('animationend', () => {
         circulo.remove();
         criarBolinhas();
+        calcularVida();
+        calcularPrecisao();
     });
 }
 
@@ -109,6 +126,8 @@ borda.addEventListener('click', (e) => {
         acertos++;
         e.target.remove();
         criarBolinhas();
+        calcularPrecisao();
+        pontos += 8;
     }
 
     else {
@@ -116,8 +135,86 @@ borda.addEventListener('click', (e) => {
     }
 
     acertosIH.innerHTML = acertos;
-})
+    pontuacaoIH.innerHTML  = pontos;
+
+    calcularPrecisao();
+});
+
+function calcularVida() {
+    if (
+        vidas[0].classList.contains('morte') &&
+        vidas[1].classList.contains('morte') &&
+        vidas[2].classList.contains('morte')
+    ) {
+        encerrarJogo();
+    } else {
+        erros++;
+
+        for (let contador = 0; contador < vidas.length; contador++) {
+            if (!vidas[contador].classList.contains('morte')) {
+                vidas[contador].classList.add('morte');
+                break;
+            }
+        }
+    }
+}
+
+function getRecorde() {
+    const recordeArmazenado = localStorage.getItem('recorde');
+    return recordeArmazenado ? parseInt(recordeArmazenado) : 0;
+}
+
+function setNovoRecorde(novoRecorde) {
+    localStorage.setItem('recorde', novoRecorde.toString());
+    recordeIH.innerHTML = novoRecorde; // Atualiza o elemento na interface com o novo recorde
+}
+
+function calcularPrecisao() {
+    precisao = (acertos / (acertos + erros)) * 100;
+    precisao = precisao.toFixed(2);
+    precisaoIH.innerHTML = `${precisao}%`;
+}
+
+function encerrarJogo() {
+    jogando = false;
+    clearInterval(intervalo);
+    borda.innerHTML = '';
+    telas[3].classList.add('deslizarCima');
+    acertosIH.innerHTML = 0;
+    pontuacaoIH.innerHTML = 0;
+    tempoIH.innerHTML = '00:00';
+    precisao.innerHTML = '0%';
+
+    acertosFim.innerHTML = acertos;
+    precisaoFim.innerHTML = `${precisao}%`;
+    pontosFim.innerHTML = pontos;
+
+    if (pontos > getRecorde()) {
+        setNovoRecorde(pontos);
+    }
+}
 
 function numeroAleatorio(min, max) {
     return Math.round(Math.random() * (max - min) + min);
+}
+
+btnRestart.forEach((botao) => {
+    botao.addEventListener('click', reiniciarJogo)
+});
+
+function reiniciarJogo() {
+    telas[1].classList.remove('deslizarCima');
+    telas[2].classList.remove('deslizarCima');
+    telas[3].classList.remove('deslizarCima');
+
+    tempo = 0;
+    dificuldade = 0;
+    acertos =  0;
+    erros = 0;
+    precisao = 0;
+    jogando = false;
+    infinito = false;
+    vidas.forEach((coracao) => {
+        coracao.classList.remove('morte');
+    });
 }

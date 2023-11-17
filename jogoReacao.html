@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./public/assets/icons/iconSite.png" type="image/x-icon">
     <link rel="stylesheet" href="public/css/jogoReacao.css">
     <link rel="stylesheet" href="public/css/animations.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <title>PlayScore | Jogo de Reação</title>
 </head>
 
@@ -57,17 +58,19 @@
             <div class="info">
                 <p>Tempo: <span id="spanTempo">00:00</span></p>
                 <p>Acertos: <span id="spanAcertos">0</span></p>
+                <p>Pontuação: <span id="spanPontos">0</span></p>
                 <p>Precisão: <span id="spanPrecisao">100%</span></p>
             </div>
+
             <div class="vidas">
-                <img src="./public/assets/icons/heart.png" class="coracao morte">
+                <img src="./public/assets/icons/heart.png" class="coracao">
                 <img src="./public/assets/icons/heart.png" class="coracao">
                 <img src="./public/assets/icons/heart.png" class="coracao">
             </div>
         </div>
-        <div class="borda" id="borda">
-            <!-- <div class="circulo"></div> -->
-        </div>
+
+        <div class="borda" id="borda"></div>
+
         <div class="opcoes">
             <button class="botao reiniciar">Reiniciar</button>
         </div>
@@ -78,11 +81,46 @@
         <div class="resultado">
             <p>Acertos: <span id="acertos-final">0</span></p>
             <p>Precisão: <span id="precisao-final">0%</span></p>
+            <p>Pontuação: <span id="pontos-final">0</span></p>
+            <p>Maior Pontuação: <span id="recorde-user">0</span></p>
+        </div>
+
+        <div class="graficos">
+            <canvas id="myChart" style="position: relative; height: 40vh;"></canvas> <br> <br>
         </div>
         <button class="botao reiniciar">Reiniciar</button>
     </div>
 
     <script src="public/js/jogoReacao.js"></script>
 </body>
+
+<script>
+    const labels = [
+        'Acertos',
+        'Erros',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Porcentagem de Acertos e Erros:',
+            backgroundColor:['rgb(150, 0, 255)',
+            'rgb(255, 0, 0)'],
+            borderColor: 'rgb(100, 0, 0)',
+            data: [70, 29],
+        }]
+    };
+
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+</script>
 
 </html>

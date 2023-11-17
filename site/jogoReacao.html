@@ -79,7 +79,8 @@
     <div class="telaJogo">
         <h1>Fim de Jogo</h1>
         <div class="resultado">
-            <p>Acertos: <span id="acertos-final">0</span></p>
+            <p>Acertos: <span id="acertos_final">0</span></p>
+            <p>Erros: <span id="erros_final">0</span></p>
             <p>Precisão: <span id="precisao-final">0%</span></p>
             <p>Pontuação: <span id="pontos-final">0</span></p>
             <p>Maior Pontuação: <span id="recorde-user">0</span></p>
@@ -94,7 +95,7 @@
     <script src="public/js/jogoReacao.js"></script>
 </body>
 
-<script>
+<script>    
     const labels = [
         'Acertos',
         'Erros',
@@ -107,7 +108,7 @@
             backgroundColor:['rgb(150, 0, 255)',
             'rgb(255, 0, 0)'],
             borderColor: 'rgb(100, 0, 0)',
-            data: [70, 29],
+            data: [acertos_final, erros_final],
         }]
     };
 

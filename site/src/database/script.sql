@@ -7,16 +7,23 @@ CREATE TABLE Usuario(
     nome VARCHAR(45) NOT NULL,
     user VARCHAR(45) UNIQUE NOT NULL,
     email VARCHAR(45) UNIQUE NOT NULL,
-    senha VARCHAR(45) NOT NULL,
-    biografia VARCHAR(250)
+    senha VARCHAR(45) NOT NULL
+);
+
+CREATE TABLE aviso (
+	idAviso INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(100),
+	descricao VARCHAR(150),
+	fk_usuario INT,
+	FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
 
 CREATE TABLE Minigames(
 	idMinigames INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
-    pontuacao INT,
+    -- pontuacao INT,
     recorde INT,
-    dtConquista DATE,
+    -- dtConquista DATE,
     fkMinigameUsuario INT,
     CONSTRAINT fkUserMinigame FOREIGN KEY (fkMinigameUsuario)
 		REFERENCES Usuario(idUsuario)

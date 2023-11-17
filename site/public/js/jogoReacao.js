@@ -6,7 +6,8 @@ const btnIniciar = document.querySelector('#btn_iniciar'),
     precisaoIH = document.querySelector('#spanPrecisao'),
     acertosIH = document.querySelector('#spanAcertos'),
     borda = document.querySelector('#borda'),
-    acertosFim = document.querySelector('#acertos-final'),
+    acertosFim = document.querySelector('#acertos_final'),
+    errosFim  = document.querySelector('#erros_final'),
     vidas = document.querySelectorAll('.coracao'),
     precisaoFim = document.querySelector('#precisao-final'),
     btnRestart = document.querySelectorAll('.reiniciar'),
@@ -161,12 +162,12 @@ function calcularVida() {
 
 function getRecorde() {
     const recordeArmazenado = localStorage.getItem('recorde');
-    return recordeArmazenado ? parseInt(recordeArmazenado) : 0;
+    return recordeArmazenado ? parseInt(recordeArmazenado): 0;
 }
 
 function setNovoRecorde(novoRecorde) {
     localStorage.setItem('recorde', novoRecorde.toString());
-    recordeIH.innerHTML = novoRecorde; // Atualiza o elemento na interface com o novo recorde
+    recordeIH.innerHTML = novoRecorde;
 }
 
 function calcularPrecisao() {
@@ -186,6 +187,7 @@ function encerrarJogo() {
     precisao.innerHTML = '0%';
 
     acertosFim.innerHTML = acertos;
+    errosFim.innerHTML = erros;
     precisaoFim.innerHTML = `${precisao}%`;
     pontosFim.innerHTML = pontos;
 

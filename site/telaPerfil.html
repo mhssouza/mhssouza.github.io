@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,47 @@
     <script src="./public/js/sessao.js"></script>
     <title>PlayScore | Perfil</title>
 </head>
+
 <body>
-    <div class="main">
-        <div class="headerUser">
-            <div class="hello">
-                <h3>Salve, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+    <div class="headerUser">
+        <div class="hello">
+            <h3>Salve, <span id="b_usuario">usuário</span>!</h3>
         </div>
     </div>
+
+    <div class="navButtons">
+        <button id="reactionButton" class="botaoUser">Reaction Lab</button>
+        <button id="quizButton" class="botaoUser">Quiz</button>
+    </div>
+
+    <div class="telaConteudo">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Recorde</td>
+                    <td><span id="recorde-user">0</span></td>
+                </tr>
+                <tr>
+                    <td>Acertos</td>
+                    <td><span id="acertos_final">0</span></td>
+                </tr>
+                <tr>
+                    <td>Erros</td>
+                    <td><span id="erros_final">0</span></td>
+                </tr>
+                <tr>
+                    <td>Precisão</td>
+                    <td><span id="precisao-final">0</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="telaConteudo">
+        <h1>Tela Quiz</h1>
+    </div>
 </body>
+
 </html>
+
+<script src="./public/js/jogoReacao.js"></script>

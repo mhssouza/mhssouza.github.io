@@ -1,5 +1,35 @@
 body{
-    min-height: 100vh;
+    /* min-height: 100vh; */
     overflow-x: hidden;
-    background-color: ;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#2b1055, #082258);
+    justify-content: center;
+    color: #ffffff;
+}
+
+.headerUser {
+    background-color: indigo;
+    text-align: center;
+    padding: 20px;
+}
+
+.hello {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+}
+
+.sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100vw;
+    display: flex;
+    padding: 100px;
+}
+
+.telaConteudo {
+    font-size: 1.3rem;
 }

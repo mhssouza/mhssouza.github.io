@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     background-size: cover;
-    overflow: hidden;
+    overflow: hidden;   
     background-color: #1e1f26;
 }
 
@@ -26,8 +26,9 @@ body {
 .inputCampo {
     transition: 0.25s;
     background: none;
-    color: #000000;
+    color: #ffffff;
     margin-top: 2%;
+    padding-left: 10px;
     display: flex;
     height: 40px;
     width: 90%;
@@ -39,6 +40,7 @@ body {
 }
 
 .inputCampo:focus {
+    color: black;
     outline-offset: 5px;
     background-color: #fff;
 }
@@ -114,3 +116,52 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.loading-div {
+    align-self: center;
+    width: 50px;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  #div_erros_login {
+    display: none
+  }
+  
+  .alerta_erro{
+    margin-left: 10%;
+    display: flex;
+    position: fixed;
+    justify-content: flex-end;
+  }
+  
+  /* .card-login {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 1px 1px 20px rgb(72, 252, 252);
+    border: solid 5px;
+    margin: 5% 30%;
+    border-color: rgb(0, 0, 105);
+    border-radius: 25px;
+    padding: 1%;
+} */
+
+  .card_erro {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 1px 1px 20px rgb(72, 252, 252);
+    color: rgb(71, 71, 245);
+    margin: 5% 30%;
+    position: fixed;
+    border-radius: 25px;
+    border: solid 5px;
+    padding: 1%;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+  }

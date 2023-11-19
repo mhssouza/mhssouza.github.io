@@ -184,16 +184,45 @@ function encerrarJogo() {
     acertosIH.innerHTML = 0;
     pontuacaoIH.innerHTML = 0;
     tempoIH.innerHTML = '00:00';
-    precisao.innerHTML = '0%';
+    precisaoIH.innerHTML = '0%';
 
-    acertosFim.innerHTML = acertos;
-    errosFim.innerHTML = erros;
+    // acertosFim.innerHTML = acertos;
+    // errosFim.innerHTML = erros;
     precisaoFim.innerHTML = `${precisao}%`;
     pontosFim.innerHTML = pontos;
 
     if (pontos > getRecorde()) {
         setNovoRecorde(pontos);
     }
+
+    const labels = [
+        'Acertos',
+        'Erros',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Porcentagem de Acertos e Erros:',
+            backgroundColor:['rgb(150, 0, 255)',
+            'rgb(255, 0, 0)'],
+            borderColor: 'rgb(100, 0, 0)',
+            data: [acertos, erros],
+        }]
+    };
+
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    recordeIH.innerHTML = getRecorde();
 }
 
 function numeroAleatorio(min, max) {

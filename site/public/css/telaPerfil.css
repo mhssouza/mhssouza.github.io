@@ -33,3 +33,57 @@ body{
 .telaConteudo {
     font-size: 1.3rem;
 }
+
+header ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a{
+    font-size: 25px;
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    transition: 0.50s;
+}
+
+/* header ul li a:hover,
+header ul li a.ativo{
+    border-bottom: 3px solid #fff;
+} */
+
+header {
+    position: relative;
+    padding-bottom: 20px;
+  }
+  
+  header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  ul:hover header::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+/* .btnUser {
+    list-style: none;
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 2px solid #09c5eb;
+} */

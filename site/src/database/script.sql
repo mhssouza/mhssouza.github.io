@@ -1,21 +1,13 @@
-CREATE DATABASE PlayScore;
+CREATE DATABASE playscore;
 
-USE PlayScore;
+USE playscore;
 
 CREATE TABLE Usuario(
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL,
-    user VARCHAR(45) UNIQUE NOT NULL,
+    usuario VARCHAR(45) UNIQUE NOT NULL,
     email VARCHAR(45) UNIQUE NOT NULL,
     senha VARCHAR(45) NOT NULL
-);
-
-CREATE TABLE aviso (
-	idAviso INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
 
 CREATE TABLE Minigames(

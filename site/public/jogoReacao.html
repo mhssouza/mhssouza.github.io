@@ -4,36 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./public/assets/icons/iconSite.png" type="image/x-icon">
-    <link rel="stylesheet" href="public/css/jogoReacao.css">
-    <link rel="stylesheet" href="public/css/animations.css">
+    <link rel="shortcut icon" href="./assets/icons/iconSite.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/jogoReacao.css">
+    <link rel="stylesheet" href="./css/animations.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <title>PlayScore | Jogo de Reação</title>
 </head>
 
 <body>
     <div class="telaJogo">
-        <h1>Jogo de Reação</h1>
+        <h1>Reaction Lab</h1>
         <button class="botao" id="btn_iniciar">Iniciar</button>
     </div>
 
     <div class="telaJogo">
-        <h1>Defina o Timer</h1>
+        <h1>Defina o Cronômetro da Rodada</h1>
         <ul class="lista" id="timerLista">
-            <li>
+            <!-- <li>
                 <button class="botao btnTempo" data-tempo="10">10 Segundos</button>
+            </li> -->
+            <li>
+                <button class="botao btnTempo" data-tempo="30">30 Seg</button>
             </li>
             <li>
-                <button class="botao btnTempo" data-tempo="30">30 Segundos</button>
+                <button class="botao btnTempo" data-tempo="60">1 Min</button>
             </li>
-            <li>
-                <button class="botao btnTempo" data-tempo="60">1 Minuto</button>
-            </li>
-            <li>
+            <!-- <li>
                 <button class="botao btnTempo" data-tempo="120">2 Minutos</button>
-            </li>
+            </li> -->
             <li>
-                <button class="botao btnTempo" data-infinito="true">Sim</button>
+                <button class="botao btnTempo" data-infinito="true">Infinito</button>
             </li>
         </ul>
     </div>
@@ -42,13 +42,13 @@
         <h1>Defina a Dificuldade</h1>
         <ul class="lista" id="dificuldadeLista">
             <li>
-                <button class="botao btnDificuldade" data-dificuldade="0">🥱 Fácil 🥱</button>
+                <button style="color: lime;" class="botao btnDificuldade" data-dificuldade="0"> Fácil </button>
             </li>
             <li>
-                <button class="botao btnDificuldade" data-dificuldade="1">😎 Médio 😎</button>
+                <button style="color: orange;" class="botao btnDificuldade" data-dificuldade="1"> Médio </button>
             </li>
             <li>
-                <button class="botao btnDificuldade" data-dificuldade="3">😈 Difícil 😈</button>
+                <button style="color: red;" class="botao btnDificuldade" data-dificuldade="3"> Difícil </button>
             </li>
         </ul>
     </div>
@@ -63,9 +63,9 @@
             </div>
 
             <div class="vidas">
-                <img src="./public/assets/icons/heart.png" class="coracao">
-                <img src="./public/assets/icons/heart.png" class="coracao">
-                <img src="./public/assets/icons/heart.png" class="coracao">
+                <img src="./assets/icons/heart.png" class="coracao">
+                <img src="./assets/icons/heart.png" class="coracao">
+                <img src="./assets/icons/heart.png" class="coracao">
             </div>
         </div>
 
@@ -79,8 +79,8 @@
     <div class="telaJogo">
         <h1>Fim de Jogo</h1>
         <div class="resultado">
-            <p>Acertos: <span id="acertos_final">0</span></p>
-            <p>Erros: <span id="erros_final">0</span></p>
+            <!-- <p>Acertos: <span id="acertos_final">0</span></p>
+            <p>Erros: <span id="erros_final">0</span></p> -->
             <p>Precisão: <span id="precisao-final">0%</span></p>
             <p>Pontuação: <span id="pontos-final">0</span></p>
             <p>Maior Pontuação: <span id="recorde-user">0</span></p>
@@ -92,36 +92,7 @@
         <button class="botao reiniciar">Reiniciar</button>
     </div>
 
-    <script src="public/js/jogoReacao.js"></script>
+    <script src="./js/jogoReacao.js"></script>
 </body>
-
-<script>    
-    const labels = [
-        'Acertos',
-        'Erros',
-    ];
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Porcentagem de Acertos e Erros:',
-            backgroundColor:['rgb(150, 0, 255)',
-            'rgb(255, 0, 0)'],
-            borderColor: 'rgb(100, 0, 0)',
-            data: [acertos_final, erros_final],
-        }]
-    };
-
-    const config = {
-        type: 'doughnut',
-        data: data,
-        options: {}
-    };
-
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-</script>
 
 </html>

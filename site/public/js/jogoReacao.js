@@ -7,7 +7,7 @@ const btnIniciar = document.querySelector('#btn_iniciar'),
     acertosIH = document.querySelector('#spanAcertos'),
     borda = document.querySelector('#borda'),
     acertosFim = document.querySelector('#acertos_final'),
-    errosFim  = document.querySelector('#erros_final'),
+    errosFim = document.querySelector('#erros_final'),
     vidas = document.querySelectorAll('.coracao'),
     precisaoFim = document.querySelector('#precisao-final'),
     btnRestart = document.querySelectorAll('.reiniciar'),
@@ -136,7 +136,7 @@ borda.addEventListener('click', (e) => {
     }
 
     acertosIH.innerHTML = acertos;
-    pontuacaoIH.innerHTML  = pontos;
+    pontuacaoIH.innerHTML = pontos;
 
     calcularPrecisao();
 });
@@ -162,7 +162,7 @@ function calcularVida() {
 
 function getRecorde() {
     const recordeArmazenado = localStorage.getItem('recorde');
-    return recordeArmazenado ? parseInt(recordeArmazenado): 0;
+    return recordeArmazenado ? parseInt(recordeArmazenado) : 0;
 }
 
 function setNovoRecorde(novoRecorde) {
@@ -177,6 +177,7 @@ function calcularPrecisao() {
 }
 
 function encerrarJogo() {
+    cadastrarBanco();
     jogando = false;
     clearInterval(intervalo);
     borda.innerHTML = '';
@@ -203,9 +204,9 @@ function encerrarJogo() {
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Porcentagem de Acertos e Erros:',
-            backgroundColor:['rgb(150, 0, 255)',
-            'rgb(255, 0, 0)'],
+            label: 'Quantidade de Acertos e Erros:',
+            backgroundColor: ['rgb(150, 0, 255)',
+                'rgb(255, 0, 0)'],
             borderColor: 'rgb(100, 0, 0)',
             data: [acertos, erros],
         }]
@@ -240,7 +241,7 @@ function reiniciarJogo() {
 
     tempo = 0;
     dificuldade = 0;
-    acertos =  0;
+    acertos = 0;
     erros = 0;
     precisao = 0;
     jogando = false;
@@ -248,4 +249,48 @@ function reiniciarJogo() {
     vidas.forEach((coracao) => {
         coracao.classList.remove('morte');
     });
+}
+
+function cadastrarBanco() {
+    var recordeVar = recorde;
+
+    console.log("FORM MINIJOGO: ", recordeVar);
+
+    fetch("/jogoReacao/cadastrarPontos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            recordeServer: recordeVar,
+            idUser: sessionStorage.ID_USUARIO
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO cadastrarBanco()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                // sessionStorage.ID_USUARIO = json.id;
+                sessionStorage.RECORDE_USUARIO = json.recorde;
+
+                setTimeout(function () {
+                    window.location = "../telaPerfil.html";
+                }, 1000); // apenas para exibir o loading
+
+            });
+
+        } else {
+
+            console.log("Houve um erro ao cadastrar pontuação");
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
 }

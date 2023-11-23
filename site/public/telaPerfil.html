@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,21 +7,21 @@
     <link rel="shortcut icon" href="./assets/icons/iconSite.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/animations.css">
     <link rel="stylesheet" href="./css/telaPerfil.css">
-    <script src="./js/sessao.js"></script>
     <title>PlayScore | Perfil</title>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <div class="headerUser">
         <div class="hello">
             <h3>Salve, <span id="b_usuario">usuário</span>!</h3>
+            <h6>@<span id="b_user">user</span></h6>
         </div>
     </div>
 
     <header>
         <ul>
-            <li><a id="btnReaction" href="./jogoReacao.html" class="btnUser">Reaction Lab</a></li>
-            <li><a id="btnQuiz" href="#" class="btnUser">Quiz</a></li>
+            <li><button id="btnReaction" class="btnUser">Reaction Lab</butotn></li>
+            <li><button id="btnQuiz" class="btnUser">Quiz</button></li>
         </ul>
     </header>
 
@@ -29,8 +29,8 @@
         <table>
             <tbody>
                 <tr>
-                    <td>Recorde</td>
-                    <td><span id="recorde-user">0</span></td>
+                    <td><b>Recorde</b></td>
+                    <td><b></b><span id="b_recorde">0</span></b></td>
                 </tr>
                 <tr>
                     <td>Acertos</td>
@@ -46,13 +46,34 @@
                 </tr>
             </tbody>
         </table>
+
+        <a class="btnRedirect" href="./jogoReacao.html">Jogar</a>
+
     </div>
 
+
     <div class="telaConteudo">
-        <h1>Tela Quiz</h1>
+        <h1>Escolha Seu Jogo Favorito!</h1>
+        <div class="jogosFav"></div>
     </div>
 </body>
 
 </html>
-
+<script src="./js/sessao.js"></script>
 <script src="./js/jogoReacao.js"></script>
+
+<script>
+    const btnReact = document.querySelector('#btnReaction'),
+        btnJogos = document.querySelector('#btnQuiz'),
+        telasUser = document.querySelectorAll('.telaConteudo');
+
+    btnJogos.addEventListener('click', () => {
+        telasUser[0].classList.add('deslizarLado');
+        telasUser[1].classList.remove('deslizarLado');
+    });
+
+    btnReact.addEventListener('click', () => {
+        telasUser[1].classList.add('deslizarLado');
+        telasUser[0].classList.remove('deslizarLado');
+    });
+</script>

@@ -80,10 +80,11 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.USER_USUARIO = json.user;
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./telaPerfil.html";
+                        window.location = "../telaPerfil.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

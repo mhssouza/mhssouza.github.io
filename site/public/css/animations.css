@@ -1,3 +1,7 @@
 .deslizarCima {
     margin-top: -100vh;
 }
+
+.deslizarLado {
+    margin-left: -100vw;
+}

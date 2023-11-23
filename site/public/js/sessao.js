@@ -1,21 +1,26 @@
-sessão
+// sessão
 function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var user = sessionStorage.USER_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
+    var recorde = sessionStorage.RECORDE_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
+    var b_user = document.getElementById("b_user");
+    var b_recorde = document.getElementById("b_recorde");
 
     if (email != null && nome != null) {
         b_usuario.innerHTML = nome;
+        b_user.innerHTML = user;
+        b_recorde.innerHTML = recorde;
     } else {
-        window.location = "./public/login.html";
+        window.location = "../login.html";
     }
 }
 
 function limparSessao() {
     sessionStorage.clear();
-    window.location = "./public/login.html";
+    window.location = "../login.html";
 }
 
 // carregamento (loading)

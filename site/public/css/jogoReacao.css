@@ -139,6 +139,15 @@ h1 {
     margin-left: 10px;
 }
 
+.botoes {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.voltar {
+    text-decoration: none;
+}
 
 @keyframes circulo {
     100% {

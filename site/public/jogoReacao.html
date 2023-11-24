@@ -12,12 +12,12 @@
 </head>
 
 <body>
-    <div class="telaJogo">
+    <div class="telaJogo deslizarCima">
         <h1>Reaction Lab</h1>
         <button class="botao" id="btn_iniciar">Iniciar</button>
     </div>
 
-    <div class="telaJogo">
+    <div class="telaJogo deslizarCima">
         <h1>Defina o Cronômetro da Rodada</h1>
         <ul class="lista" id="timerLista">
             <li>
@@ -32,7 +32,7 @@
         </ul>
     </div>
 
-    <div class="telaJogo">
+    <div class="telaJogo deslizarCima">
         <h1>Defina a Dificuldade</h1>
         <ul class="lista" id="dificuldadeLista">
             <li>
@@ -47,7 +47,7 @@
         </ul>
     </div>
 
-    <div class="telaJogo">
+    <div class="telaJogo deslizarCima">
         <div class="telaFinal">
             <div class="info">
                 <p>Tempo: <span id="spanTempo">00:00</span></p>
@@ -83,7 +83,10 @@
         <div class="graficos">
             <canvas id="myChart" style="position: relative; height: 40vh;"></canvas> <br> <br>
         </div>
-        <button class="botao reiniciar">Reiniciar</button>
+        <div class="botoes">
+            <button class="botao reiniciar">Reiniciar</button>
+            <a href="./telaPerfil.html" class="botao voltar">Voltar Pro Perfil</a>
+        </div>
     </div>
 
     <script src="./js/jogoReacao.js"></script>

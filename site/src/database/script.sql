@@ -10,14 +10,15 @@ CREATE TABLE Usuario(
     senha VARCHAR(45) NOT NULL
 );
 
-CREATE TABLE Minigames(
-	idMinigames INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100),
-    -- pontuacao INT,
+CREATE TABLE jogoReacao(
+	idJogoReacao INT PRIMARY KEY AUTO_INCREMENT,
     recorde INT,
-    -- dtConquista DATE,
-    fkMinigameUsuario INT,
-    CONSTRAINT fkUserMinigame FOREIGN KEY (fkMinigameUsuario)
+    pontos INT,
+    acertos INT,
+    erros INT,
+    precisao INT,
+    fkJogoReacaoUsuario INT,
+    CONSTRAINT fkUserJogoReacao FOREIGN KEY (fkJogoReacaoUsuario)
 		REFERENCES Usuario(idUsuario)
 )AUTO_INCREMENT = 5000;
 

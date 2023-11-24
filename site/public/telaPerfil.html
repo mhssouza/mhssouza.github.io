@@ -22,33 +22,41 @@
         <ul>
             <li><button id="btnReaction" class="btnUser">Reaction Lab</butotn></li>
             <li><button id="btnQuiz" class="btnUser">Quiz</button></li>
+            <li><button id="btnQuiz" class="btnUser">Leaderboard</button></li>
         </ul>
     </header>
 
     <div class="telaConteudo">
         <table>
+            <thead>
+                <th colspan="2">Última Sessão</th>
+            </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td><b>Recorde</b></td>
-                    <td><b></b><span id="b_recorde">0</span></b></td>
+                    <td><b><span id="b_recorde">0</span></b></td>
+                </tr> -->
+                <tr>
+                    <td>Pontos</td>
+                    <td><span id="b_pontos">0</span></td>
                 </tr>
                 <tr>
                     <td>Acertos</td>
-                    <td><span id="acertos_final">0</span></td>
+                    <td><span id="b_acertos">0</span></td>
                 </tr>
                 <tr>
                     <td>Erros</td>
-                    <td><span id="erros_final">0</span></td>
+                    <td><span id="b_erros">0</span></td>
                 </tr>
                 <tr>
                     <td>Precisão</td>
-                    <td><span id="precisao-final">0</span></td>
+                    <td><span id="b_precisao">0</span>%</td>
                 </tr>
             </tbody>
+            <tfoot>
+                <th colspan="2"><a class="btnRedirect" href="./jogoReacao.html">Jogar</a></th>
+            </tfoot>
         </table>
-
-        <a class="btnRedirect" href="./jogoReacao.html">Jogar</a>
-
     </div>
 
 

@@ -20,12 +20,12 @@ let tempo = 0,
     infinito = false,
     dificuldade = 0,
     jogando = false,
-    acertos = 0,
-    erros = 0,
     pontos = 0,
     qtdAlvos = 0,
-    precisao = 0,
-    recorde = 0,
+    recorde = sessionStorage.getItem('recorde') || getRecorde(),
+    acertos = sessionStorage.getItem('acertos') || 0,
+    erros = sessionStorage.getItem('erros') || 0,
+    precisao = sessionStorage.getItem('precisao') || 0,
     intervalo = 0;
 
 btnIniciar.addEventListener('click', () => {
@@ -176,6 +176,56 @@ function calcularPrecisao() {
     precisaoIH.innerHTML = `${precisao}%`;
 }
 
+function cadastrarBanco() {
+    var recordeVar = getRecorde(),
+        pontosVar = pontos,
+        acertosVar = acertos,
+        errosVar = erros,
+        precisaoVar = precisao;
+
+    console.log("FORM MINIJOGO: ", recordeVar);
+
+    fetch("/jogoReacao/cadastrarPontos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            recordeServer: recordeVar,
+            pontosServer: pontosVar,
+            acertosServer: acertosVar,
+            errosServer: errosVar,
+            precisaoServer: precisaoVar,
+            idUser: sessionStorage.ID_USUARIO
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO cadastrarBanco()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                // sessionStorage.ID_USUARIO = json.id;
+                sessionStorage.RECORDE_USUARIO = json.recorde;
+                sessionStorage.ACERTOS_USUARIO = json.acertos;
+                sessionStorage.ERROS_USUARIO = json.erros;
+                sessionStorage.PRECISAO_USUARIO = json.precisao;
+            });
+
+        } else {
+
+            console.log("Houve um erro ao cadastrar pontuação");
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+
 function encerrarJogo() {
     cadastrarBanco();
     jogando = false;
@@ -186,15 +236,19 @@ function encerrarJogo() {
     pontuacaoIH.innerHTML = 0;
     tempoIH.innerHTML = '00:00';
     precisaoIH.innerHTML = '0%';
-
-    // acertosFim.innerHTML = acertos;
-    // errosFim.innerHTML = erros;
     precisaoFim.innerHTML = `${precisao}%`;
     pontosFim.innerHTML = pontos;
 
     if (pontos > getRecorde()) {
+        recorde = pontos;
+        // sessionStorage.setItem('recorde', recorde);
         setNovoRecorde(pontos);
     }
+
+    sessionStorage.setItem('acertos', acertos);
+    sessionStorage.setItem('pontos', pontos);
+    sessionStorage.setItem('erros', erros);
+    sessionStorage.setItem('precisao', precisao);
 
     const labels = [
         'Acertos',
@@ -244,53 +298,16 @@ function reiniciarJogo() {
     acertos = 0;
     erros = 0;
     precisao = 0;
+
+    // recorde = sessionStorage.getItem('recorde') || getRecorde();
+    // acertos = parseInt(sessionStorage.getItem('acertos')) || 0;
+    // erros = parseInt(sessionStorage.getItem('erros')) || 0;
+    // precisao = parseFloat(sessionStorage.getItem('precisao')) || 0;
+
+
     jogando = false;
     infinito = false;
     vidas.forEach((coracao) => {
         coracao.classList.remove('morte');
     });
-}
-
-function cadastrarBanco() {
-    var recordeVar = recorde;
-
-    console.log("FORM MINIJOGO: ", recordeVar);
-
-    fetch("/jogoReacao/cadastrarPontos", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            recordeServer: recordeVar,
-            idUser: sessionStorage.ID_USUARIO
-        })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO cadastrarBanco()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                // sessionStorage.ID_USUARIO = json.id;
-                sessionStorage.RECORDE_USUARIO = json.recorde;
-
-                setTimeout(function () {
-                    window.location = "../telaPerfil.html";
-                }, 1000); // apenas para exibir o loading
-
-            });
-
-        } else {
-
-            console.log("Houve um erro ao cadastrar pontuação");
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
 }

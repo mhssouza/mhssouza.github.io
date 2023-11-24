@@ -10,6 +10,7 @@ body{
 }
 
 .headerUser {
+    height: 150px;
     background-color: indigo;
     text-align: center;
     padding: 20px;
@@ -45,7 +46,7 @@ header ul li{
 header ul li .btnUser{
     border: none;
     background-color: transparent;
-    font-size: 50px;
+    font-size: 40px;
     text-decoration: none;
     padding: 6px 15px;
     color: #fff;
@@ -71,9 +72,10 @@ h1 {
 }
 
 table {
-    margin-top: -30%;
+    margin-top: -25%;
     width: 22%;
     align-self: center;
+    align-items: center;
 }
 
 tr, td {
@@ -83,14 +85,16 @@ tr, td {
 }
 
 .btnRedirect {
-    /* margin-left: -300px; */
-    /* margin-top: 230px; */
+    margin-top: 5%;
+    justify-content: center;
+    /* margin-left: 50%; */
+    /* align-self: center; */
     height: 40px;
     padding: 10px;
     font-size: 2rem;
     list-style: none;
     text-decoration: none;
-    justify-self: center;
+    /* justify-self: center; */
     display: flex;
     color: #ffffff;
     background-color: transparent;

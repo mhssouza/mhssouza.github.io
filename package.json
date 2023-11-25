@@ -1,10 +1,13 @@
 {
-  "name": "site",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node ./site/app.js",
-    "dev": "cd site && npm run dev",
-    "postinstall": "cd site && npm install"
+    "name": "PlayScore",
+    "version": "0.2.0",
+    "private": true,
+    "scripts": {
+      "start": "node ./site/app.js",
+      "dev": "cd PlayScore && npm run dev",
+      "postinstall": "cd PlayScore && npm install"
+    },
+    "dependencies": {
+      "jwt-decode": "^4.0.0"
+    }
   }
-}

@@ -144,8 +144,7 @@ borda.addEventListener('click', (e) => {
 function calcularVida() {
     if (
         vidas[0].classList.contains('morte') &&
-        vidas[1].classList.contains('morte') &&
-        vidas[2].classList.contains('morte')
+        vidas[1].classList.contains('morte')
     ) {
         encerrarJogo();
     } else {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/icons/iconSite.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/telaUser.css">
+    <script src="./js/sessao.js"></script>
+    <title>PlayScore | Perfil</title>
+</head>
+
+<body onload="validarSessao()">
+    <div class="header">
+        <span>* Bem Vindo(a) <span class="spanUser" id="b_usuario">user</span>!</span> <br>
+        <span>* @<span class="spanUser" id="b_user">user</span></span> <br>
+        <span>* <span class="spanUser" id="b_email">exemplo@email.com</span></span>
+    </div> <br><br>
+
+    <header>
+        <ul>
+            <li><a class="btnUser btnAction">Reaction Lab</a></li>
+            <li><a href="./jogoMemoria.html" class="btnUser btnAction">Memory Quest</a></li>
+            <li><a href="./index.html" class="btnUser btnAction">Sair</a></li>
+        </ul>
+    </header>
+
+    <div class="telaConteudo">
+        <table>
+            <thead>
+                <th colspan="2">Última Sessão</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pontos</td>
+                    <td><span id="b_pontos">0</span></td>
+                </tr>
+                <tr>
+                    <td>Acertos</td>
+                    <td><span id="b_acertos">0</span></td>
+                </tr>
+                <tr>
+                    <td>Erros</td>
+                    <td><span id="b_erros">0</span></td>
+                </tr>
+                <tr>
+                    <td>Precisão</td>
+                    <td><span id="b_precisao">0</span>%</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <th colspan="2"><a class="btnRedirect btnAction" href="./jogoReacao.html">JOGAR</a></th>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>

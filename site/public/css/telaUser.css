@@ -1,24 +1,30 @@
+@font-face {
+    font-family: 'sansFont';
+    src: url('../assets/font/UndertaleSans.ttf') format('truetype');
+  }
+
 body{
-    /* min-height: 100vh; */
-    text-align: center;
+    font-family: 'sansFont', sans-serif;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(#2b1055, #082258);
+    background: #000;
     justify-content: center;
     color: #ffffff;
 }
 
-.headerUser {
-    height: 150px;
-    background-color: indigo;
-    text-align: center;
-    padding: 20px;
+.btnAction {
+    color: rgb(228, 216, 0);
+    background-color: transparent;
+    border: 6px solid rgb(228, 216, 0);
 }
 
-.hello {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 2rem;
+.spanUser {
+    color: rgb(234, 255, 0);
+}
+
+.header {
+    border: solid 10px #ffffff;
+    padding: 20px;
+    font-size: 2.5rem;
 }
 
 .telaConteudo {
@@ -44,31 +50,12 @@ header ul li{
 }
 
 header ul li .btnUser{
-    border: none;
-    background-color: transparent;
+    margin-top: 80%;
+    cursor: pointer;
     font-size: 40px;
     text-decoration: none;
     padding: 6px 15px;
-    color: #fff;
     transition: 0.35s;
-}
-
-header {
-    position: relative;
-    padding-bottom: 20px;
-  }
-
-.btnUser:hover {
-    cursor: pointer;
-    border-radius: 25px;
-    border-bottom: 5px solid #ffffff;
-    /* border-bottom: 2px solid #09c5eb; */
-}
-
-
-h1 {
-    font-size: 4rem;
-    line-height: 2.4;
 }
 
 table {
@@ -85,25 +72,14 @@ tr, td {
 }
 
 .btnRedirect {
+    text-align: center;
     margin-top: 5%;
     justify-content: center;
-    /* margin-left: 50%; */
-    /* align-self: center; */
     height: 40px;
     padding: 10px;
     font-size: 2rem;
     list-style: none;
     text-decoration: none;
-    /* justify-self: center; */
     display: flex;
-    color: #ffffff;
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    border-radius: 15px;
     transition: 0.50s;
-}
-
-.btnRedirect:hover {
-    background-color: #ffffff;
-    color: #082258;
 }

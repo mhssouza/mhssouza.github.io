@@ -11,23 +11,24 @@
     <title>PlayScore | Jogo de Reação</title>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <div class="telaJogo deslizarCima">
         <h1>Reaction Lab</h1>
         <button class="botao" id="btn_iniciar">Iniciar</button>
+        <a href="./telaUser.html" class="botao">Voltar ao Perfil</a>
     </div>
 
     <div class="telaJogo deslizarCima">
-        <h1>Defina o Cronômetro da Rodada</h1>
+        <h1>DEFINA O CRONOMETRO DA RODADA</h1>
         <ul class="lista" id="timerLista">
             <li>
-                <button class="botao btnTempo" data-tempo="30">30 Seg</button>
+                <button class="botao btnTempo btnAction" data-tempo="30">30 Seg</button>
             </li>
             <li>
-                <button class="botao btnTempo" data-tempo="60">1 Min</button>
+                <button class="botao btnTempo btnAction" data-tempo="60">1 Min</button>
             </li>
             <li>
-                <button class="botao btnTempo" data-infinito="true">Infinito</button>
+                <button class="botao btnTempo btnAction" data-infinito="true">Infinito</button>
             </li>
         </ul>
     </div>
@@ -36,13 +37,13 @@
         <h1>Defina a Dificuldade</h1>
         <ul class="lista" id="dificuldadeLista">
             <li>
-                <button style="color: lime;" class="botao btnDificuldade" data-dificuldade="0"> Fácil </button>
+                <button style="color: lime; border-color: lime;" class="botao btnDificuldade btnAction" data-dificuldade="0"> Facil </button>
             </li>
             <li>
-                <button style="color: orange;" class="botao btnDificuldade" data-dificuldade="1"> Médio </button>
+                <button style="color: orange; border-color: orange;" class="botao btnDificuldade btnAction" data-dificuldade="1"> Medio </button>
             </li>
             <li>
-                <button style="color: red;" class="botao btnDificuldade" data-dificuldade="3"> Difícil </button>
+                <button style="color: red; border-color: red;" class="botao btnDificuldade btnAction" data-dificuldade="3"> Dificil </button>
             </li>
         </ul>
     </div>
@@ -52,8 +53,8 @@
             <div class="info">
                 <p>Tempo: <span id="spanTempo">00:00</span></p>
                 <p>Acertos: <span id="spanAcertos">0</span></p>
-                <p>Pontuação: <span id="spanPontos">0</span></p>
-                <p>Precisão: <span id="spanPrecisao">100%</span></p>
+                <p>Pontuacao: <span id="spanPontos">0</span></p>
+                <p>Precisao: <span id="spanPrecisao">100%</span></p>
             </div>
 
             <div class="vidas">
@@ -66,7 +67,7 @@
         <div class="borda" id="borda"></div>
 
         <div class="opcoes">
-            <button class="botao reiniciar">Reiniciar</button>
+            <button class="botao reiniciar btnAction">Reiniciar</button>
         </div>
     </div>
 
@@ -75,25 +76,29 @@
         <div class="resultado">
             <!-- <p>Acertos: <span id="acertos_final">0</span></p>
             <p>Erros: <span id="erros_final">0</span></p> -->
-            <p>Precisão: <span id="precisao-final">0%</span></p>
-            <p>Pontuação: <span id="pontos-final">0</span></p>
-            <p>Maior Pontuação: <span id="recorde-user">0</span></p>
+            <p>Precisao: <span id="precisao-final">0%</span></p>
+            <p>Pontuacao: <span id="pontos-final">0</span></p>
+            <p>Maior Pontuacao: <span id="recorde-user">0</span></p>
         </div>
 
         <div class="graficos">
             <canvas id="myChart" style="position: relative; height: 40vh;"></canvas> <br> <br>
         </div>
+
+        <div class="resultado">
+            <p>Voce nao pode desistir ainda... <br>
+            <span id="b_usuario">user</span>! <br>
+            Tenha determinacao...</p>
+        </div>
+
         <div class="botoes">
-            <button class="botao reiniciar">Reiniciar</button>
-            <a href="./telaPerfil.html" class="botao voltar">Voltar Pro Perfil</a>
+            <button class="botao reiniciar btnAction">Reiniciar</button>
+            <a href="./telaUser.html" class="botao voltar btnAction">Voltar ao Perfil</a>
         </div>
     </div>
 
     <script src="./js/jogoReacao.js"></script>
+    <script src="./js/sessao.js"></script>
 </body>
 
 </html>
-
-<script>
-
-</script>

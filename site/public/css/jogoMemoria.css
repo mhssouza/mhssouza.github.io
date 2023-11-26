@@ -1,16 +1,22 @@
+@font-face {
+    font-family: 'sansFont';
+    src: url('../assets/font/UndertaleSans.ttf') format('truetype');
+}
+
 * {
+    font-family: 'sansFont', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: monospace;
 }
 
 body {
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #7c02a5;
+    background: #000000;
 }
 
 .main {
@@ -20,13 +26,14 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background: #9d05d0;
+    border: solid 10px #ffffff;
+    background: #000000;
     padding: 40px 60px;
 }
 
 .mainJogo {
     width: 430px;
-    height: 430px;
+    height: 440px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -42,10 +49,12 @@ h2 {
 }
 
 .resetJogo {
-    padding: 15px 20px;
-    color: #7c02a5;
-    border: none;
+    text-decoration: none;
+    border: 6px solid rgb(228, 216, 0);
+    color: rgb(228, 216, 0);
+    background-color: transparent;
     font-size: 1.5rem;
+    padding: 7px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
@@ -54,9 +63,10 @@ h2 {
 }
 
 .resetJogo:hover {
-    color: #fff;
-    transition: 0.30s;
-    background: #7c02a5;
+    cursor: pointer;
+    background-color: rgb(228, 216, 0);
+    color: rgb(0, 0, 0);
+    border-color: rgb(255, 255, 255);
 }
 
 .item {
@@ -80,7 +90,7 @@ h2 {
     content: '';
     position: absolute;
     inset: 0;
-    background: #c336f1;
+    background: #ffffff;
     transition: 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
@@ -92,17 +102,15 @@ h2 {
 }
 
 .mensagemVitoria {
-    color: #fff;
+    color: rgb(228, 216, 0);
     transition: 1s;
     display: none;
     align-items: center;
     justify-content: center;
-    height: 20%;
-    width: 30%;
-    border-radius: 25px;
-    background: linear-gradient(45deg, #dc69ff, #b958db);
-    box-shadow: 24px -24px 7px #522761,
-        -24px 24px 7px #ff9dff;
+    height: 15%;
+    border: 10px solid rgb(228, 216, 0);
+    background: #000;
+    width: 25%;
     position: fixed;
     z-index: 1;
 }

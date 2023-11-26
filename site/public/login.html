@@ -24,13 +24,12 @@
             <div class="campo">
                 <input type="text" class="inputCampo" id="email_input" placeholder="E-mail"> <br> <br>
                 <input class="inputCampo senha" type="password" id="senha_input" placeholder="Senha"> <br>
-                <u><a href="#">Esqueceu a senha?</a></u> <br>
                 <button class="botao" onclick="entrar()">Entrar</button> <br> <br>
-                <span class="directLogin">Não possui um cadastro? <a href="cadastro.html">Cadastre-se aqui!</a></span>
+                <span class="directLogin">Não possui um cadastro? <a href="cadastro.html" class="labelLink">Cadastre-se aqui!</a></span>
             </div>
 
             <div id="div_aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" id="loading-gif">
+                <img src="./assets/loadingDog.gif" id="loading-gif">
             </div>
 
             <div id="div_erros_login"></div>
@@ -84,7 +83,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "../telaPerfil.html";
+                        window.location = "../telaUser.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

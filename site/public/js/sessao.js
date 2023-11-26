@@ -18,9 +18,9 @@ function validarSessao() {
     var b_precisao = document.getElementById("b_precisao");
 
     if (email != null && nome != null) {
+        b_email.innerHTML = email;
         b_usuario.innerHTML = nome;
         b_user.innerHTML = user;
-        // b_recorde.innerHTML = recorde;
         b_acertos.innerHTML = acertos;
         b_pontos.innerHTML = pontos;
         b_erros.innerHTML = erros;

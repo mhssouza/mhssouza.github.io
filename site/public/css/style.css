@@ -1,29 +1,43 @@
-*{
+@font-face {
+    font-family: 'sansFont';
+    src: url('../assets/font/UndertaleSans.ttf') format('truetype');
+}
+
+* {
+    font-family: 'sansFont', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 15px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background: rgb(80, 0, 90);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     color: #5c3e8d;
 }
 
-body{
+body {
     min-height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(#2b1055, #7597de);
+    background: linear-gradient(#000, #2b1055);
 }
 
-header{
+.btnAction {
+    border: 6px solid #16a0ff;
+    border-radius: 25px;
+    border-color: #fff;
+    background: #fff;
+    color: #2b1055;
+}
+
+header {
     position: absolute;
     top: 0;
     left: 0;
@@ -35,36 +49,36 @@ header{
     z-index: 10000;
 }
 
-header .logo{
+header .logo {
     width: 400px;
 }
 
-header ul{
+header ul {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header ul li{
+header ul li {
     list-style: none;
     margin-left: 20px;
 }
 
-header ul li a{
+header ul li a {
     text-decoration: none;
     padding: 6px 15px;
-    color: #fff;
-    border-radius: 20px;
-    transition: 0.50s;
+    transition: 0.25s;
 }
 
 header ul li a:hover,
-header ul li a.ativo{
-    background: #fff;
-    color: #2b1055;
+header ul li a.ativo {
+    color: #000000;
+    border-color: #16a0ff;
+    background-color: transparent;
+    background: #16a0ff;
 }
 
-section{
+section {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -75,17 +89,17 @@ section{
     overflow: hidden;
 }
 
-section::before{
+section::before {
     content: '';
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 100px;
-    background: linear-gradient(to top, #1c0522, transparent);
+    background: linear-gradient(to top, #000, transparent);
     z-index: 1000;
 }
 
-section img{
+section img {
     position: absolute;
     top: 0;
     left: 0;
@@ -95,15 +109,15 @@ section img{
     pointer-events: none;
 }
 
-section img#imgLua{
+section img#imgLua {
     mix-blend-mode: screen;
 }
 
-section img#imgMontanhaFront{
+section img#imgMontanhaFront {
     z-index: 10;
 }
 
-#textoBoasVindas{
+#textoBoasVindas {
     position: absolute;
     right: -350px;
     color: #fff;
@@ -111,34 +125,31 @@ section img#imgMontanhaFront{
     z-index: 9;
 }
 
-#botao{
+#botao {
     text-decoration: none;
     display: inline-block;
     padding: 8px 30px;
-    border-radius: 40px;
-    background: #fff;
-    color: #2b1055;
     font-size: 1.5em;
     z-index: 9;
     transform: translateY(100px);
 }
 
-.sec{
+.sec {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     padding: 50px;
-    background: #1c0522;
+    background: #000;
 }
 
-.sec h2{
+.sec h2 {
     font-size: 50px;
     margin-bottom: 10px;
     color: #fff;
 }
 
-.sec p{
+.sec p {
     font-size: 25px;
     color: #fff;
 }
@@ -146,9 +157,8 @@ section img#imgMontanhaFront{
 .conteudoBox {
     /* margin-left: 15%; */
     width: 70%;
-    border-radius: 10px;
     padding: 10px;
-    border: 3px solid #7597de;
+    border: 10px solid #ffffff;
     margin-bottom: 3%;
 }
 

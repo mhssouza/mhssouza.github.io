@@ -1,145 +1,140 @@
+@font-face {
+  font-family: 'sansFont';
+  src: url('../assets/font/UndertaleSans.ttf') format('truetype');
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'sansFont', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-image: url(../assets/img/telaLogin.gif);
-    display: flex;
-    justify-content: center;
-    background-size: cover;
-    overflow: hidden;   
-    background-color: #1e1f26;
+  background-image: url(../assets/img/telaLogin.gif);
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  overflow: hidden;
+  background-color: #1e1f26;
 }
 
 .card-login {
-    background-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 1px 1px 20px rgb(72, 252, 252);
-    border: solid 5px;
-    margin: 5% 30%;
-    border-color: rgb(0, 0, 105);
-    border-radius: 25px;
-    padding: 1%;
+  background-color: rgb(0, 0, 0);
+  border: solid 10px #fff;
+  margin: 5% 30%;
+  padding: 1%;
 }
 
 .inputCampo {
-    transition: 0.25s;
-    background: none;
-    color: #ffffff;
-    margin-top: 2%;
-    padding-left: 10px;
-    display: flex;
-    height: 40px;
-    width: 90%;
-    border: 0;
-    border-radius: 10px;
-    outline: 2px solid #00c3fe;
-    outline-offset: 3px;
-    transition: 0.25s;
+  transition: 0.25s;
+  background: none;
+  color: #ffffff;
+  margin-top: 2%;
+  padding-left: 10px;
+  display: flex;
+  height: 40px;
+  width: 90%;
+  border: 4px solid rgb(255, 255, 255);
+  transition: 0.25s;
 }
 
 .inputCampo:focus {
-    color: black;
-    outline-offset: 5px;
-    background-color: #fff;
+  color: black;
+  background-color: #fff;
 }
 
 .campo {
-    font-size: 20px;
-    margin-left: 30px;
-    color: #ffffff;
-    padding: 7px;
-    overflow: hidden;
+  font-size: 20px;
+  margin-left: 30px;
+  color: #ffffff;
+  padding: 7px;
+  overflow: hidden;
 }
 
 .nomeUser {
-    width: 82.8%;
-    gap: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  width: 82.8%;
+  gap: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .botao {
-    border: 0;
-    margin-right: 30px;
-    width: 90%;
-    outline: 2px solid rgb(0, 119, 255);
-    outline-offset: 3px;
-    border-radius: 10px;
-    color: aqua;
-    background-color: rgb(10, 10, 10);
-    font-size: 20px;
-    padding: 10px;
-    align-items: center;
-    margin-top: 25px;
-    transition: 0.50s;
+  border: 0;
+  margin-right: 30px;
+  width: 90%;
+  border: 6px solid rgb(228, 216, 0);
+  color: rgb(228, 216, 0);
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px;
+  align-items: center;
+  margin-top: 25px;
+  transition: 0.50s;
 }
 
 .botao:hover {
-    cursor: pointer;
-    background-color: #fff;
-    color: darkblue;
-    transition: 0.50s;
-    outline-offset: 6px;
-    transform: translateY(-5px);
+  cursor: pointer;
+  background-color: rgb(228, 216, 0);
+  color: rgb(0, 0, 0);
+  transition: 0.50s;
+  border-color: rgb(0, 0, 0);
+  /* outline-offset: 6px; */
+  transform: translateY(-5px);
+}
+
+.labelLink {
+  margin-left: 10px;
+  text-decoration: none;
+  color: yellow;
 }
 
 .directLogin {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-}
-
-.foto_user {
-    display: flex;
-    justify-self: center;
-    /* width: 150px; */
-    height: 300px;
-    color: mediumorchid;
-    border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
 }
 
 .telaCadastro {
-    /* height: 100vh; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: margin 0.5s ease-in-out;    
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: margin 0.5s ease-in-out;
 }
 
 .telaCadastro h1 {
-    font-size: 45px;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
+  font-size: 45px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
 }
 
 .loading-div {
-    align-self: center;
-    width: 50px;
-    display: none;
-  }
-  
-  .loading-div img {
-    height: 50px;
-    width: 50px;
-  }
-  
-  #div_erros_login {
-    display: none
-  }
-  
-  .alerta_erro{
-    margin-left: 10%;
-    display: flex;
-    position: fixed;
-    justify-content: flex-end;
-  }
-  
-  /* .card-login {
+  align-self: center;
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
+.alerta_erro {
+  margin-left: 10%;
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+}
+
+/* .card-login {
     background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 1px 1px 20px rgb(72, 252, 252);
     border: solid 5px;
@@ -149,19 +144,17 @@ body {
     padding: 1%;
 } */
 
-  .card_erro {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 1px 1px 20px rgb(72, 252, 252);
-    color: rgb(71, 71, 245);
-    margin: 5% 30%;
-    position: fixed;
-    border-radius: 25px;
-    border: solid 5px;
-    padding: 1%;
-  }
-  
-  .card_erro #mensagem_erro{
-    font-weight: 500;
-    font-size: 20px;
-  }
+.card_erro {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  margin: 5% 30%;
+  position: fixed;
+  border: solid 10px #fff;
+  padding: 1%;
+}
+
+.card_erro #mensagem_erro {
+  font-weight: 500;
+  font-size: 20px;
+}

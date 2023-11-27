@@ -1,16 +1,16 @@
 var jogoModel = require("../models/jogoModel");
 
 function cadastrarPontos(req, res) {
-    var recorde = req.body.recordeServer;
+    // var recorde = req.body.recordeServer;
     var pontos = req.body.pontosServer;
     var acertos = req.body.acertosServer;
     var erros = req.body.errosServer;
     var precisao = req.body.precisaoServer;
 
-    if (recorde == undefined) {
-        res.status(400).send("Seu recorde está undefined!");
-    }
-    else if (pontos == undefined) {
+    // if (recorde == undefined) {
+    //     res.status(400).send("Seu recorde está undefined!");
+    // }
+    if (pontos == undefined) {
         res.status(400).send("Seus pontos estão undefined!")
     }
     else if (acertos == undefined) {
@@ -32,7 +32,7 @@ function cadastrarPontos(req, res) {
                 if (resultadoMinigame.length == 1) {
 
                     res.json({
-                        recorde: resultadoMinigame[0].recorde,
+                        // recorde: resultadoMinigame[0].recorde,
                         pontos: resultadoMinigame[0].pontos,
                         acertos: resultadoMinigame[0].acertos,
                         erros: resultadoMinigame[0].erros,
@@ -48,16 +48,16 @@ function cadastrarPontos(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var recorde = req.body.recordeServer;
+    // var recorde = req.body.recordeServer;
     var pontos = req.body.pontosServer;
     var acertos = req.body.acertosServer;
     var erros = req.body.errosServer;
     var precisao = req.body.precisaoServer;
     var idUsuario = req.body.idUser;
 
-    if (recorde == undefined) {
-        res.status(400).send("Seu recorde está undefined!");
-    } else if (pontos == undefined) {
+    // if (recorde == undefined) {
+    //     res.status(400).send("Seu recorde está undefined!");
+    if (pontos == undefined) {
         res.status(400).send("Seus pontos estão indefinidos!");
     } else if (acertos == undefined) {
         res.status(400).send("Seus acertos estão indefinidos!");
@@ -70,7 +70,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo jogoModel.js
-        jogoModel.cadastrar(recorde, pontos, acertos, erros, precisao, idUsuario)
+        jogoModel.cadastrar(pontos, acertos, erros, precisao, idUsuario)
 
             .then(
                 function (resultado) {

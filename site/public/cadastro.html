@@ -25,7 +25,7 @@
             <h1>Cadastre-se aqui!</h1>
             <div class="campo nomeUser">
                 <input class="inputCampo" type="text" id="nome_input" placeholder="Nome">
-                <input type="text" class="inputCampo" id="usuario_input" placeholder="Usuário">
+                <input type="text" class="inputCampo" id="usuario_input" placeholder="Usuario">
             </div>
 
             <div class="campo">
@@ -77,21 +77,51 @@
 
             finalizarAguardar();
             return false;
-        } else if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.com') == -1) {
+        }
+
+        else if (emailVar.indexOf('@') == -1 && emailVar.indexOf('.') == -1) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
-                'Insira um email válido.'
+                'Insira um email valido.'
             finalizarAguardar()
             return false;
+        }
 
-        } else if (senhaVar != confirmacaoSenhaVar) {
+        else if (senhaVar.length < 6) {
+            cardErro.style.display = 'block';
+            senha_input.style.border.color = 'rgb(228, 216, 0)';
+            mensagem_erro.innerHTML =
+                'A senha deve conter pelo menos 6 caracteres!'
+            finalizarAguardar();
+            return false;
+        }
+
+        // else if (
+        //     senhaVar.indexOf('@') == -1 ||
+        //     senhaVar.indexOf('!') == -1 ||
+        //     senhaVar.indexOf('#') == -1 ||
+        //     senhaVar.indexOf('$') == -1 ||
+        //     senhaVar.indexOf('%') == -1 ||
+        //     senhaVar.indexOf('&') == -1 ||
+        //     senhaVar.indexOf('*') == -1
+        // ) {
+        //     cardErro.style.display = "block";
+        //     mensagem_erro.innerHTML =
+        //         'As senhas deve conter pelo menos um caractere especial!'
+        //     finalizarAguardar()
+        //     return false;
+        // }
+
+        else if (senhaVar != confirmacaoSenhaVar) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 'As senhas devem ser iguais!'
             finalizarAguardar()
             return false;
-        } else {
-            setInterval(sumirMensagem, 1000);
+        }
+
+        else {
+            setInterval(sumirMensagem, 4000);
         }
 
         // Enviando o valor da nova input

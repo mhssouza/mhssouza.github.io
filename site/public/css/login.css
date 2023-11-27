@@ -27,6 +27,7 @@ body {
 }
 
 .inputCampo {
+  font-size: 20px;
   transition: 0.25s;
   background: none;
   color: #ffffff;

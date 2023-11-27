@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -17,41 +17,40 @@
         <span>* <span class="spanUser" id="b_email">exemplo@email.com</span></span>
     </div> <br><br>
 
-    <header>
-        <ul>
-            <li><a class="btnUser btnAction">Reaction Lab</a></li>
-            <li><a href="./jogoMemoria.html" class="btnUser btnAction">Memory Quest</a></li>
-            <li><a href="./index.html" class="btnUser btnAction">Sair</a></li>
-        </ul>
-    </header>
+    <div class="conteudo">
+        <header>
+            <ul>
+                <li><a href="./jogoReacao.html" class="btnUser btnAction">Reaction Lab</a></li>
+                <li><a href="./index.html" class="btnUser btnAction" onclick="limparSessao()">Sair</a></li>
+                <li><a href="./jogoMemoria.html" class="btnUser btnAction">Memory Quest</a></li>
+            </ul>
+        </header>
 
-    <div class="telaConteudo">
-        <table>
-            <thead>
-                <th colspan="2">Última Sessão</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Pontos</td>
-                    <td><span id="b_pontos">0</span></td>
-                </tr>
-                <tr>
-                    <td>Acertos</td>
-                    <td><span id="b_acertos">0</span></td>
-                </tr>
-                <tr>
-                    <td>Erros</td>
-                    <td><span id="b_erros">0</span></td>
-                </tr>
-                <tr>
-                    <td>Precisão</td>
-                    <td><span id="b_precisao">0</span>%</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <th colspan="2"><a class="btnRedirect btnAction" href="./jogoReacao.html">JOGAR</a></th>
-            </tfoot>
-        </table>
+        <div class="telaConteudo">
+            <table>
+                <thead>
+                    <th colspan="2">Ultima Sessao</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pontos</td>
+                        <td><span id="b_pontos">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Acertos</td>
+                        <td><span id="b_acertos">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Erros</td>
+                        <td><span id="b_erros">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Precisão</td>
+                        <td><span id="b_precisao">0</span>%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 

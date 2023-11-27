@@ -25,6 +25,16 @@ body {
     border: 6px solid rgb(255, 242, 0);
 }
 
+.btnAction:hover {
+    cursor: pointer;
+    background-color: rgb(228, 216, 0);
+    color: rgb(0, 0, 0);
+    transition: 0.25s;
+    border-color: rgb(0, 0, 0);
+    /* outline-offset: 6px;
+    transform: translateY(-5px); */
+  }
+
 h1 {
     font-size: 4rem;
     line-height: 2.4;

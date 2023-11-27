@@ -72,8 +72,13 @@
             confirmacaoSenhaVar == ""
         ) {
             cardErro.style.display = "block";
+            nome_input.style.borderColor = 'rgb(228, 216, 0)';
+            usuario_input.style.borderColor = 'rgb(228, 216, 0)';
+            email_input.style.borderColor = 'rgb(228, 216, 0)';
+            senha_input.style.borderColor = 'rgb(228, 216, 0)';
+            input_confirmar_senha.style.borderColor = 'rgb(228, 216, 0)';
             mensagem_erro.innerHTML =
-                "Por favor, preencha todos os campos.";
+                "* Por favor, preencha todos os campos.";
 
             finalizarAguardar();
             return false;
@@ -81,41 +86,28 @@
 
         else if (emailVar.indexOf('@') == -1 && emailVar.indexOf('.') == -1) {
             cardErro.style.display = "block";
+            email_input.style.borderColor = 'rgb(228, 216, 0)';
             mensagem_erro.innerHTML =
-                'Insira um email valido.'
+                '* Insira um email valido.'
             finalizarAguardar()
             return false;
         }
 
         else if (senhaVar.length < 6) {
             cardErro.style.display = 'block';
-            senha_input.style.border.color = 'rgb(228, 216, 0)';
+            senha_input.style.borderColor = 'rgb(228, 216, 0)';
             mensagem_erro.innerHTML =
-                'A senha deve conter pelo menos 6 caracteres!'
+                '* A senha deve conter pelo menos 6 caracteres!'
             finalizarAguardar();
             return false;
         }
 
-        // else if (
-        //     senhaVar.indexOf('@') == -1 ||
-        //     senhaVar.indexOf('!') == -1 ||
-        //     senhaVar.indexOf('#') == -1 ||
-        //     senhaVar.indexOf('$') == -1 ||
-        //     senhaVar.indexOf('%') == -1 ||
-        //     senhaVar.indexOf('&') == -1 ||
-        //     senhaVar.indexOf('*') == -1
-        // ) {
-        //     cardErro.style.display = "block";
-        //     mensagem_erro.innerHTML =
-        //         'As senhas deve conter pelo menos um caractere especial!'
-        //     finalizarAguardar()
-        //     return false;
-        // }
-
         else if (senhaVar != confirmacaoSenhaVar) {
             cardErro.style.display = "block";
+            senha_input.style.borderColor = 'rgb(228, 216, 0)';
+            input_confirmar_senha.style.borderColor = 'rgb(228, 216, 0)';
             mensagem_erro.innerHTML =
-                'As senhas devem ser iguais!'
+                '* As senhas devem ser iguais!'
             finalizarAguardar()
             return false;
         }
@@ -146,7 +138,7 @@
                     cardErro.style.display = "block";
 
                     mensagem_erro.innerHTML =
-                        "Cadastro realizado com sucesso! Faça login para acessar o site! Redirecionando...";
+                        "* Cadastro realizado com sucesso! Faça login para acessar o site! Redirecionando...";
 
                     setTimeout(() => {
                         window.location = "login.html";
@@ -156,6 +148,8 @@
                     finalizarAguardar();
                 } else {
                     throw "Houve um erro ao tentar realizar o cadastro!";
+                    cardErro.style.display = "block";
+                    mensagem_erro.innerHTML = "Houve um erro ao tentar realizar o cadastro!";
                 }
             })
             .catch(function (resposta) {

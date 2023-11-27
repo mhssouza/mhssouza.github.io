@@ -258,9 +258,9 @@ function encerrarJogo() {
         labels: labels,
         datasets: [{
             label: 'Quantidade de Acertos e Erros:',
-            backgroundColor: ['rgb(150, 0, 255)',
+            backgroundColor: ['rgb(0, 73, 184)',
                 'rgb(255, 0, 0)'],
-            borderColor: 'rgb(100, 0, 0)',
+            borderColor: 'transparent',
             data: [acertos, erros],
         }]
     };

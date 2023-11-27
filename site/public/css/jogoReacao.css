@@ -18,6 +18,12 @@ body {
     background-color: #1e1f26;
 }
 
+.inicio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
 
 .btnAction {
     color: rgb(255, 242, 0);

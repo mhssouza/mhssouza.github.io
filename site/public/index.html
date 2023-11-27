@@ -29,11 +29,17 @@
 
     <div class="sec" id="sec">
         <h2>O que são Jogos?</h2> <br> <br>
-        <p>Jogos sao um universo totalmente diferente do nosso, sao mais do que <span style="color: cyan;">"simples ferramentas de entretenimento"</span>. Claro, 90% dos jogos no mercado sao feitos para o publico se divertir e relaxar depois de um longo dia de trabalho (sem comentar sobre os jogos que sao literalmente feitos como um "<span style="color: red;">ima de dinheiro</span>"). <br> <br>
-        
-        Com isso, podemos citar diversos tipos de jogos diferentes com todo tipo de estilo diferente, cada um sendo mais unico que o outro! Realmente o mundo dos jogos foi feito para nos tirar da nossa propria  realidade, nos proporcionando uma imersao que praticamente nenhuma outra coisa pode nos proporcionar.
+        <p>Jogos sao um universo totalmente diferente do nosso, sao mais do que <span style="color: cyan;">"simples
+                ferramentas de entretenimento"</span>. Claro, 90% dos jogos no mercado sao feitos para o publico se
+            divertir e relaxar depois de um longo dia de trabalho (sem comentar sobre os jogos que sao literalmente
+            feitos como um "<span style="color: red;">ima de dinheiro</span>"). <br> <br>
 
-        Sendo assim, podemos citar diversos tipos de jogos que podem nos trazer essas sensacoes e o que mais nos atrai para este mundo virtual.
+            Com isso, podemos citar diversos tipos de jogos diferentes com todo tipo de estilo diferente, cada um sendo
+            mais unico que o outro! Realmente o mundo dos jogos foi feito para nos tirar da nossa propria realidade, nos
+            proporcionando uma imersao que praticamente nenhuma outra coisa pode nos proporcionar.
+
+            Sendo assim, podemos citar diversos tipos de jogos que podem nos trazer essas sensacoes e o que mais nos
+            atrai para este mundo virtual.
         </p>
     </div>
     </div>
@@ -43,9 +49,12 @@
         <p>Para começar, alguns pontos que eu acredito que tornam os jogos algo cativante, são:</p> <br> <br>
 
         <div class="conteudoBox">
-            <h2 style="color: rgb(228, 216, 0);" class="conteudo__img undertale">Historia</h2>
+            <h2 style="color: rgb(228, 216, 0);" class="conteudo__img undertale">* Historia</h2>
             <div class="conteudo">
-                <p class="textoConteudo">* Um dos pontos principais para um bom jogo com boa imersao e sem duvidas sua historia. <br> * Pois a historia e a <span style="color: cyan;">essencia</span> do jogo, pois ela e o que define qual rumo o mesmo ira tomar, e e o fator principal que prende o jogador e o motiva a continuar jogando.
+                <p class="textoConteudo">* Um dos pontos principais para um bom jogo com boa imersao e sem duvidas sua
+                    historia. <br> * Pois a historia e a <span style="color: cyan;">essencia</span> do jogo, pois ela e
+                    o que define qual rumo o mesmo ira tomar, e e o fator principal que prende o jogador e o motiva a
+                    continuar jogando.
                 </p>
             </div>
         </div>
@@ -53,7 +62,10 @@
         <div class="conteudoBox">
             <h2 style="color: rgb(228, 216, 0);" class="conteudo__img hollowKnight">* Ambientacao</h2>
             <div class="conteudo">
-                <p class="textoConteudo">* Outro ponto extremamente importante e a ambientacao de um jogo. <br> * Quando o jogo possui uma boa ambientacao, se torna muito mais imersivo e interativo, ter diversos lugares onde o jogador pode explorar e admirar o mundo virtual ao redor do seu personagem e uma experiencia que todos que ja presenciaram uma boa ambientacao podem confirmar.</p>
+                <p class="textoConteudo">* Outro ponto extremamente importante e a ambientacao de um jogo. <br> * Quando
+                    o jogo possui uma boa ambientacao, se torna muito mais imersivo e interativo, ter diversos lugares
+                    onde o jogador pode explorar e admirar o mundo virtual ao redor do seu personagem e uma experiencia
+                    que todos que ja presenciaram uma boa ambientacao podem confirmar.</p>
             </div>
         </div>
 
@@ -80,24 +92,4 @@
 
 </html>
 
-<script>
-    let imgEstrelas = document.getElementById('imgEstrelas');
-    let imgLua = document.getElementById('imgLua');
-    let imgMontanhaFront = document.getElementById('imgMontanhaFront');
-    let textoBoasVindas = document.getElementById('textoBoasVindas');
-    let botao = document.getElementById('botao');
-    let imgMontanhaBack = document.getElementById('imgMontanhaBack');
-    let header = document.querySelector('header');
-
-    window.addEventListener('scroll', function () {
-        let value = window.scrollY;
-        imgEstrelas.style.left = value * 0.25 + 'px';
-        imgLua.style.top = value * 1.25 + 'px';
-        imgMontanhaBack.style.top = value * 0.5 + 'px';
-        imgMontanhaFront.style.top = value * 0 + 'px';
-        textoBoasVindas.style.marginRight = value * 3 + 'px';
-        textoBoasVindas.style.marginTop = value * 1.5 + 'px';
-        botao.style.marginTop = value * 1.5 + 'px';
-        header.style.top = value * 0.5 + 'px';
-    })
-</script>
+<script src="./js/index.js"></script>

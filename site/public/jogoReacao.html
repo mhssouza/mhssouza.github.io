@@ -11,14 +11,16 @@
     <title>PlayScore | Jogo de Reação</title>
 </head>
 
-<body onload="validarSessao()">
-    <div class="telaJogo deslizarCima">
+<body>
+    <div class="telaJogo">
         <h1>Reaction Lab</h1>
-        <button class="botao" id="btn_iniciar">Iniciar</button>
-        <a href="./telaUser.html" class="botao">Voltar ao Perfil</a>
+        <div class="inicio">
+            <button class="botao btnAction" id="btn_iniciar">Iniciar</button>
+            <a href="./telaUser.html" class="botao voltar btnAction">Voltar ao Perfil</a>
+        </div>
     </div>
 
-    <div class="telaJogo deslizarCima">
+    <div class="telaJogo">
         <h1>DEFINA O CRONOMETRO DA RODADA</h1>
         <ul class="lista" id="timerLista">
             <li>
@@ -33,7 +35,7 @@
         </ul>
     </div>
 
-    <div class="telaJogo deslizarCima">
+    <div class="telaJogo">
         <h1>Defina a Dificuldade</h1>
         <ul class="lista" id="dificuldadeLista">
             <li>
@@ -48,7 +50,7 @@
         </ul>
     </div>
 
-    <div class="telaJogo deslizarCima">
+    <div class="telaJogo">
         <div class="telaFinal">
             <div class="info">
                 <p>Tempo: <span id="spanTempo">00:00</span></p>
@@ -97,7 +99,6 @@
     </div>
 
     <script src="./js/jogoReacao.js"></script>
-    <script src="./js/sessao.js"></script>
 </body>
 
 </html>

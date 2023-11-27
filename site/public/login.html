@@ -47,8 +47,10 @@
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Por favor preencha todos os campos!  ";
+            cardErro.style.display = "block";
+            senha_input.style.borderColor = 'rgb(228, 216, 0)';
+            email_input.style.borderColor = 'rgb(228, 216, 0)';
+            mensagem_erro.innerHTML = "* Por favor preencha todos os campos!  ";
             finalizarAguardar();
             return false;
         }

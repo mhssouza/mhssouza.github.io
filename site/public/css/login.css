@@ -54,7 +54,7 @@ body {
 }
 
 .nomeUser {
-  width: 82.8%;
+  width: 84.5%;
   gap: 30px;
   display: flex;
   flex-direction: row;
@@ -148,10 +148,10 @@ body {
 .card_erro {
   display: none;
   background-color: rgba(0, 0, 0, 0.9);
-  color: #fff;
+  color: rgb(228, 216, 0);
   margin: 5% 30%;
   position: fixed;
-  border: solid 10px #fff;
+  border: solid 10px rgb(228, 216, 0);
   padding: 1%;
 }
 

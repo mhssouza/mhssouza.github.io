@@ -37,7 +37,6 @@ CREATE TABLE
         idInventario INT PRIMARY KEY AUTO_INCREMENT,
         fkConquista INT,
         fkUsuarioConquista INT,
-        dataConquista DATE,
         CONSTRAINT fkUsuarioConquista FOREIGN KEY (fkUsuarioConquista) REFERENCES Usuario(idUsuario),
         CONSTRAINT fkConquista FOREIGN KEY (fkConquista) REFERENCES conquistas(idConquista)
     ) AUTO_INCREMENT = 15000;
@@ -47,8 +46,8 @@ INSERT INTO conquistas VALUES
 (null, 'Veterano de Reação', 'Consiga 600 pontos no Reaction Lab'),
 (null, 'Reaction Master', 'Complete uma Rodada de Reaction Lab no Modo Difícil sem perder NENHUMA VIDA'),
 (null, 'Reaction God', 'Consiga 800 pontos no Reaction Lab no modo DIFÍCIL'),
-(null, 'Memória de Elefante', 'Complete o Memory Quest em NO MÁXIMO 24 movimentos'),
-(null, 'Memória Fotográfica', 'Complete o Memory Quest em NO MÁXIMO 18 movimentos');
+(null, 'Por um Fio!', 'Compelete uma rodada de Reaction Lab com 1 coração'),
+(null, 'Má Sorte', 'Termine uma Rodada de Reaction Lab perdendo todas as vidas');
 
 SELECT * FROM Usuario;
 SELECT * FROM jogoReacao;
@@ -56,18 +55,10 @@ SELECT * FROM conquistas;
 
 SELECT * FROM Usuario JOIN jogoReacao ON fkJogoReacaoUsuario = idUsuario;
 
-SELECT usuario.usuario AS 'Nome do usuario', inventario.*, conquistas.nome AS 'Nome da Conquista'
-FROM inventario
-JOIN usuario ON inventario.fkUsuarioConquista = usuario.idUsuario
-JOIN conquistas ON inventario.fkConquista = conquistas.idConquista;
+SELECT pontos, acertos, erros, precisao, fkJogoReacaoUsuario FROM jogoReacao 
+JOIN Usuario ON fkJogoReacaoUsuario = idUsuario WHERE fkJogoReacaoUsuario = 1;
 
-SELECT usuario.nome AS nome_usuario, inventario.dataConquista, conquistas.nome AS 'Nome da Conquista'
-FROM inventario
-JOIN usuario ON inventario.fkUsuarioConquista = usuario.idUsuario
-JOIN conquistas ON inventario.fkConquista = conquistas.idConquista;
-
-SELECT usuario.usuario AS 'Usuario', inventario.dataConquista, conquistas.nome AS 'Nome da Conquista' 
-FROM inventario 
-JOIN usuario ON inventario.fkUsuarioConquista = usuario.idUsuario 
-JOIN conquistas ON inventario.fkConquista = conquistas.idConquista
-WHERE idUsuario = 1;
+SELECT * FROM inventario JOIN conquistas 
+ON fkConquista = idConquista
+JOIN usuario 
+ON fkUsuarioConquista = idUsuario WHERE idUsuario = 1;

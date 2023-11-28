@@ -8,25 +8,32 @@
     <title>PlayScore | Conquistas</title>
 </head>
 <body>
+    <!-- onload="validarSessao()" -->
+    <div class="cardUser">
+        
+    </div>
+
     <div class="main">
         <div class="mochila">
             <h1>Inventario</h1>
-            <a>- Medalha de Prata</a>
-            <a>- Medalha de Ouro</a>
-            <a>- Cristal de Vida</a>
-            <a>- Mascara de Aranha</a>
-            <a>- Elefante de Pelucia</a>
-            <a>- Camera Fotografica</a>
+            <ul id="itemLista">
+                <li><a id="conquista" class="itensInventario conqPrata" data-item="1">- Medalha de Prata</a></li>
+                <li><a id="conquista" class="itensInventario conqOuro" data-item="2">- Medalha de Ouro</a></li>
+                <li><a is="conquista" class="itensInventario conqMask" data-item="4">- Mascara de Aranha</a></li>
+                <li><a id="conquista" class="itensInventario conqPartido" data-item="5">- Coracao Partido</a></li>
+                <li><a id="conquista" class="itensInventario conqCristal" data-item="3">- Cristal de Vida</a></li>
+                <li><a id="conquista" class="itensInventario conqPedacos" data-item="6">- Pedacos da Alma</a></li>
+            </ul>
         </div>
 
         <div class="descricaoItens">
             <div class="itens">
                 <span id="imagemConquista"></span>
-                <h2 id="nomeConquista">Iniciante de Reação</h2>
+                <h2 id="nomeConquista"></h2>
                 <span class="bordaSeparar"></span>
-                <h2 id="descricaoConquista">Consiga 400 pontos no Reaction Lab</h2>
+                <h2 id="descricaoConquista"></h2>
                 <span class="bordaSeparar"></span>
-                <h2 id="dataConquistada">27/10/2023</h2>
+                <h2 id="dataConquistada"></h2>
             </div>
         </div>
 
@@ -37,3 +44,5 @@
 </html>
 
 <script src="./js/userConquistas.js"></script>
+<script src="./js/jogoReacao.js"></script>
+<script src="./js/sessao.js"></script>

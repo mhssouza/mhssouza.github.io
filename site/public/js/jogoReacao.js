@@ -14,7 +14,14 @@ const btnIniciar = document.querySelector('#btn_iniciar'),
     qtdBolinhas = document.querySelector('#total-bolinhas'),
     pontuacaoIH = document.querySelector('#spanPontos'),
     pontosFim = document.querySelector('#pontos-final'),
-    recordeIH = document.querySelector('#recorde-user');
+    recordeIH = document.querySelector('#recorde-user'),
+    itens = document.querySelector('#conquista'),
+    prata = document.querySelector('#conqPrata'),
+    ouro = document.querySelector('#conqOuro'),
+    mask = document.querySelector('#conqMask'),
+    partido = document.querySelector('#conqPartido'),
+    pedacos = document.querySelector('#conqPedacos'),
+    cristal = document.querySelector('#conqCristal');
 
 let tempo = 0,
     infinito = false,
@@ -240,7 +247,6 @@ function encerrarJogo() {
 
     if (pontos > getRecorde()) {
         recorde = pontos;
-        // sessionStorage.setItem('recorde', recorde);
         setNovoRecorde(pontos);
     }
 
@@ -297,12 +303,6 @@ function reiniciarJogo() {
     acertos = 0;
     erros = 0;
     precisao = 0;
-
-    // recorde = sessionStorage.getItem('recorde') || getRecorde();
-    // acertos = parseInt(sessionStorage.getItem('acertos')) || 0;
-    // erros = parseInt(sessionStorage.getItem('erros')) || 0;
-    // precisao = parseFloat(sessionStorage.getItem('precisao')) || 0;
-
 
     jogando = false;
     infinito = false;

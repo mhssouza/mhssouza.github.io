@@ -1,15 +1,15 @@
 const emojis = [
-    '🤓', '🤓', 
-    '😺', '😺', 
-    '🎯', '🎯', 
-    '❤️', '❤️', 
-    '🍅', '🍅', 
-    '🗿', '🗿', 
-    '😜', '😜', 
+    '🤓', '🤓',
+    '😺', '😺',
+    '🎯', '🎯',
+    '❤️', '❤️',
+    '🍅', '🍅',
+    '🗿', '🗿',
+    '😜', '😜',
     '🥶', '🥶'
 ];
 var sortearEmoji = emojis.sort(() => (Math.random() > .5) ? 2 : -1);
-for (c = 0; c < emojis.length; c++) {
+for (let c = 0; c < emojis.length; c++) {
     let area = document.createElement('div')
     area.className = 'item';
     area.innerHTML = sortearEmoji[c];

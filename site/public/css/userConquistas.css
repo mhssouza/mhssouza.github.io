@@ -85,6 +85,18 @@ a:hover {
     height: 70vh;
 }
 
+.mochila ul li {
+    padding: 7px;
+    list-style: none;
+}
+
+.mochila ul {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    /* align-items: start; */
+}
+
 .descricaoItens {
     border: solid 10px #fff;
     width: 25%;
@@ -92,17 +104,16 @@ a:hover {
 }
 
 .itens {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #imagemConquista {
     margin-top: 1%;
-    background-image: url('');
     background-size: cover;
     width: 190px;
-    height: 160px;
+    height: 170px;
     justify-self: center;
     align-self: center;
 }
@@ -110,4 +121,32 @@ a:hover {
 .bordaSeparar {
     border-bottom: solid 4px #fff;
     width: 90%;
+}
+
+.silverMedal {
+    background-image: url('../assets/conquistasIMG/silverMedal.png');
+}
+
+.goldMedal {
+    background-image: url('../assets/conquistasIMG/goldMedal.png');
+}
+
+.cristalCoracao {
+    background-image: url('../assets/conquistasIMG/cristalCoracao.png');
+}
+
+.spiderMask {
+    background-image: url('../assets/conquistasIMG/spiderMask.png');
+}
+
+.brokenHeart {
+    background-image: url('../assets/conquistasIMG/brokenHeart.png');
+}
+
+.shatteredHeart {
+    background-image: url('../assets/conquistasIMG/shatteredHeart.png');
+}
+
+.conqPrata, .conqOuro, .conqMask, .conqPartido, .conqPedacos, .conqCristal {
+    display: none;
 }

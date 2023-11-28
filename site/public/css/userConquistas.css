@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'sansFont';
+    src: url('../assets/font/UndertaleSans.ttf') format('truetype');
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'sansFont', sans-serif;
+    overflow: hidden;
+    background: #000;
+    justify-content: center;
+    color: #ffffff;
+}
+
+
+.btnRedirect {
+    margin-top: 2%;
+    /* justify-content: center;
+    flex-direction: column; */
+    width: 10%;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+}
+
+.btnAction {
+    justify-self: center;
+    color: rgb(228, 216, 0);
+    background-color: transparent;
+    border: 6px solid rgb(228, 216, 0);
+}
+
+.btnAction:hover {
+    cursor: pointer;
+    background-color: rgb(228, 216, 0);
+    color: rgb(0, 0, 0);
+    transition: 0.25s;
+    border-color: rgb(0, 0, 0);
+  }
+
+.main {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1 {
+    align-self: center;
+    font-size: 3rem;
+    color: #16a0ff;
+}
+
+h2 {
+    text-align: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    /* padding: 10px; */
+}   
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 16px;
+}
+
+a:hover {
+    color: rgb(228, 216, 0);
+}
+
+.tituloItem {
+    color: #16a0ff;
+    font-size: 2.5rem;
+}
+
+.mochila {
+    display: flex;
+    flex-direction: column;
+    border: solid 10px #fff;
+    width: 25%;
+    height: 70vh;
+}
+
+.descricaoItens {
+    border: solid 10px #fff;
+    width: 25%;
+    height: 70vh;
+}
+
+.itens {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#imagemConquista {
+    margin-top: 1%;
+    background-image: url('');
+    background-size: cover;
+    width: 190px;
+    height: 160px;
+    justify-self: center;
+    align-self: center;
+}
+
+.bordaSeparar {
+    border-bottom: solid 4px #fff;
+    width: 90%;
+}
